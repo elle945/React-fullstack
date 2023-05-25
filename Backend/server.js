@@ -47,11 +47,11 @@ const client = new Client({
   })
 
   //Rutterna
-  app.get('/persons', async (req, res) => {
+  app.get('/', async (req, res) => {
     try {
-      const result = await client.query('SELECT * FROM persons');
+      const result = await client.query('SELECT * FROM locationinfos');
       res.json(result.rows)
-     
+
     }
     catch (err) {
       console.error(err);

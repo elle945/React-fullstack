@@ -11,12 +11,12 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{bgcolor: 'bgcolor.bg'}}>
       <Toolbar>
-      <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Smultronstället
+      <Typography variant="h2" component="div" sx={{ flexGrow: 1 }}>
+          SMULTRONSTÄLLET
         </Typography>
-        <IconButton edge="end" color="inherit" onClick={toggleDrawer} sx={{ mr: 2 }}>
+        <IconButton edge="end" color="black" onClick={toggleDrawer} sx={{ mr: 2 }}>
           <MenuIcon />
         </IconButton>
 
