@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
-import './index.css'
+import './App.css'
 import { ThemeProvider, colors, createTheme } from '@mui/material'
 
 
@@ -25,7 +25,7 @@ const theme = createTheme({
     },
     h2: {
       fontSize: '20pt',
-      fontFamily: 'Bodoni',
+      fontFamily: "Bodoni",
       color: '#000000'
     },
     h3: {
