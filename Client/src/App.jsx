@@ -6,6 +6,8 @@ import PlacesPage from './pages/Places'
 import ReviewPage from './pages/Review'
 import NavBar from './components/Navbar'
 import Footer from './components/Footer'
+import ProductCards from './components/ProductCards'
+import UploadForm from './components/UploadForm'
 import { Routes, Route, Link } from 'react-router-dom'
 
 function App() {
@@ -62,8 +64,9 @@ const handleSubmit = (event) => {
 
 <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/platser" element={<PlacesPage />} />
-          <Route path="/recensioner" element={<ReviewPage />} />
+          <Route path="/platser" element={<UploadForm />} />
+          <Route path="/recensioner" element={<ProductCards />} />
+
           </Routes>
     <Footer/>
 
