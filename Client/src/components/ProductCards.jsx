@@ -1,30 +1,15 @@
 // import Button from 'react-bootstrap/Button';
 
 import Card from 'react-bootstrap/Card';
-
 import axios from "axios"
-
 import {useState,useEffect} from "react"
-
 // import Typography from '@mui/material/Typography';
 
 import Rating from '@mui/material/Rating';
-
 import { Container, Row, Col } from 'react-bootstrap'
-
 import '../App.css';
-
-
-
-
 function ProductCards() {
-
-
-
  const [data, setData] = useState([])
-
-
-
  useEffect(() => {
  axios.get('http://localhost:3000/locationinfos')
  .then(response => {
@@ -34,11 +19,6 @@ function ProductCards() {
  //handle errors
  });
  }, []);
-
-
-
-
-
  return ( <div>
   <Container className='CardContainer'>
  <Row>
