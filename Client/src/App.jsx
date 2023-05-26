@@ -13,6 +13,7 @@ function App() {
     <div>
       <NavBar/>
 
+
 <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/platser" element={<PlacesPage />} />
