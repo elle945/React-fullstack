@@ -1,8 +1,10 @@
 import React from 'react'
-
+import ProductCards from '../components/ProductCards'
 function PlacesPage() {
   return (
-    <div>PlacesPage</div>
+    <>
+    <ProductCards/>
+    </>
   )
 }
 

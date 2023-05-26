@@ -8,18 +8,63 @@ import {useState,useEffect} from "react"
 import Rating from '@mui/material/Rating';
 import { Container, Row, Col } from 'react-bootstrap'
 import '../App.css';
-function ProductCards() {
+
+ function ProductCards() {
+
  const [data, setData] = useState([])
- useEffect(() => {
- axios.get('http://localhost:3000/locationinfos')
+
+  useEffect(() => {
+  axios.get('http://localhost:3000/locationinfos')
  .then(response => {
-   setData(response.data)
+   setData(response.data);
+   console.log(data);
  })
  .catch(() => {
  //handle errors
  });
  }, []);
+
+
+//Creates a copy of data and a new array using spread-operator(...)
+const fetchData = () => {
+  axios.get('http://localhost:3000/locationinfos')
+  .then(response => {
+    setData(response.data);
+    console.log(data);
+  })
+  .catch(() => {
+  //handle errors
+  });
+}
+ const highRating = () => {
+  const sortedData = [...data];
+  sortedData.sort((a, b) => b.rating - a.rating);
+  setData(sortedData);
+}
+
+
+const searchName = (event) => {
+  const search = event.target.value;
+
+  if(search === '') { // If input field is empty, reset data to original data
+    fetchData()
+
+     }
+
+   else {
+    const searchData = [...data]
+    const matchingName = searchData.filter((item) => {
+      const plats = item.location.toLowerCase();
+      return plats.includes(search.toLowerCase());
+    });
+    setData(matchingName);
+  }
+}
+
+
  return ( <div>
+  <button onClick={highRating}>Rating högst till lägst</button>
+  <input onInput={searchName} type='text'></input>
   <Container className='CardContainer'>
  <Row>
   {data.map((item) => (
