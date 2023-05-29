@@ -69,10 +69,11 @@ const searchName = (event) => {
  <Row>
   {data.map((item) => (
    <Col xl={12} md={4} key={item.id}>
-    <Card style={{ width: '18rem' }}>
+    <Card style={{ width: '18rem', paddingBottom: '10vh', margin: 'auto' }}>
     <Card.Img style={{ width: '20rem' }} variant="top" src={`Images/${item.image_url}`} />
     <Card.Body>
-     <Card.Title>{item.location}</Card.Title>
+     <Card.Title><b>{item.location}</b></Card.Title>
+     <br></br>
      <Card.Text>
     {item.description}
      </Card.Text>

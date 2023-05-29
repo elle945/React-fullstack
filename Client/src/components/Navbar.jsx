@@ -11,7 +11,7 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static" sx={{bgcolor: 'bgcolor.bg'}}>
+    <AppBar position="static" sx={{bgcolor: 'bgcolor.bg'}} className='navbar'>
       <Toolbar>
       <Typography variant="h2" component="div" sx={{ flexGrow: 1 }}>
           SMULTRONSTÄLLET
@@ -30,7 +30,7 @@ function Navbar() {
             <Link to={"/platser"}>Platser</Link>
           </ListItem>
           <ListItem button onClick={toggleDrawer}>
-            <Link to={"/recension"}>Lämna recension</Link>
+            <Link to={"/recensioner"}>Lämna recension</Link>
           </ListItem>
         </List>
       </Drawer>
