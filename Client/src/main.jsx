@@ -25,7 +25,7 @@ const theme = createTheme({
     },
     h2: {
       fontSize: '20pt',
-      fontFamily: 'Bodoni',
+      fontFamily: "Bodoni",
       color: '#000000'
     },
     h3: {

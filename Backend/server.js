@@ -97,6 +97,17 @@ app.get('/', async (req, res) => {
     res.status(500).send('Error retrieving persons');
   }
 })
+app.get('/:id', async (req, res) => {
+  try {
+    const result = await client.query('SELECT * FROM locationinfos');
+    res.json(result.rows)
+
+  }
+  catch (err) {
+    console.error(err);
+    res.status(500).send('Error retrieving locationinfos');
+  }
+})
 
 app.get('/locationinfos', async (req, res) => {
  try {
