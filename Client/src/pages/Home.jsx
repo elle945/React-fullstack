@@ -61,7 +61,7 @@ function filter(event) {
             <Container sx={{ height: "100vh" }}>
 
               <div className='homeForm'>
-              <input className='inputField'       type="text" onChange={filter}/>
+              <input className='inputField'       type="text" value="Sök efter plats..." onChange={filter}/>
               <button className='inputBtn'><TuneIcon></TuneIcon></button>
               </div>
 
