@@ -63,21 +63,26 @@ const searchName = (event) => {
 
 
  return ( <div>
-  <button onClick={highRating}>Rating högst till lägst</button>
-  <input onInput={searchName} type='text'></input>
+  <div className='bgimg'>
+ </div>
+
+<div style={{width: '50%', margin: 'auto', marginTop: '2em'}}>
+  <input className='inputField' onInput={searchName} type='text'></input>
+  <button className='inputBtn2' onClick={highRating}>HEJ</button>
+  </div>
   <Container className='CardContainer'>
  <Row>
   {data.map((item) => (
    <Col xl={12} md={4} key={item.id}>
-    <Card style={{ width: '18rem', paddingBottom: '10vh', margin: 'auto' }}>
-    <Card.Img style={{ width: '20rem' }} variant="top" src={`Images/${item.image_url}`} />
+    <Card style={{ width: '80vw', paddingBottom: '10vh', backgroundColor: 'white', margin: 'auto', marginTop: '10px' }}>
+    <Card.Img style={{ width: '80vw' }} variant="top" src={`Images/${item.image_url}`} />
     <Card.Body>
-     <Card.Title><b>{item.location}</b></Card.Title>
+     <Card.Title style={{paddingTop: '1em', paddingLeft: '1em'}}><b>{item.location}</b></Card.Title>
      <br></br>
-     <Card.Text>
+     <Card.Text style={{padding: '1em'}}>
     {item.description}
      </Card.Text>
-     <Rating name="read-only" value={item.rating} readOnly />
+     <Rating style={{padding: '1em'}} name="read-only" value={item.rating} readOnly />
     </Card.Body>
     </Card>
    </Col>

@@ -8,6 +8,14 @@
   font-family: 'Open Sans';
   overflow-x: hidden;
 }
+body {
+  background: url('../public/smultOpac.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: rgb(240, 239, 171, 0.5);
+}
 
 .footer {
   position: relative;
@@ -113,6 +121,13 @@ border: none;
 padding-left: 10px;
 
 }
+.inputField2 {
+  width: 90%;
+  height: 42px;
+  border-radius: 12px 0px 12px 0px;
+  border: none;
+
+  }
 
 .inputBtn {
 height: 42px;
