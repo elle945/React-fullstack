@@ -9,19 +9,29 @@ import { useState, useEffect } from 'react'
 function HomePage() {
 
   const [data, setData] = useState([])
+  const [ filterData, setFilterData] = useState([])
   const [welcome, setWelcome] = useState(true)
 
-  useEffect(() => {
+
+  function fetch() {
     axios.get('http://localhost:3000/')
       .then(response => {
         setData(response.data)
         console.log(data)
 
       })
+  }
+
+  useEffect(() => {
+    fetch();
   }, [])
 
 
 
+
+// function filter() {
+//   const filter = data.find((data) => )
+// }
 
 
 
@@ -46,7 +56,7 @@ function HomePage() {
           <div className='bgimg'>
             <Container sx={{ height: "100vh" }}>
 
-              <input type="text" />
+              <input type="text" onChange={filter}/>
 
 
               {data.map((item) => (
