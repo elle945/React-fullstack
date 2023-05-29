@@ -1,8 +1,12 @@
 import React from 'react'
-
+import UploadForm from '../components/UploadForm'
 function ReviewPage() {
   return (
-    <div>ReviewPage</div>
+    <>
+    <div className='container'>
+    <UploadForm/>
+    </div>
+    </>
   )
 }
 
