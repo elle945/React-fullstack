@@ -1,20 +1,21 @@
 //Import av axios då vi på denna sidan kommer att göra en POST
 
 import axios from "axios"
-//När vi lagt till en ny bok så updateras vårt "book" state (vår array), därav använder vi usestate
+
 
 import {useState} from "react"
 import Card from '@mui/material/Card';
 import TextField from '@mui/material/TextField';
-import ThemeProvider from 'react-bootstrap/ThemeProvider'
 import {Container, Row, Col } from 'react-bootstrap';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+import { Box } from "@mui/material";
 import '../App.css';
+// import Rating from '@mui/material/Rating';
 
 
 const UploadForm = () => {
 
+  // const [value, setValue] = React.useState(2);
 const [info, setInfo] = useState({
 
  location : "",
@@ -48,116 +49,62 @@ return (
 
 
 <div className="FormContainer">
-<Card sx={{ display: "flex", flexDirection: "column", alignItems: "center", maxWidth: 800, height: 'auto'}}>
+<Card sx={{ pb: "10vh", mb: "10vh", display: "flex", flexDirection: "column", alignItems: "center", width:'80vh', height: 'auto'}}>
 <Typography sx={{p: 2, mt: 2}}variant="h5" gutterBottom>Lägg till ditt smultronställe</Typography>
 <Container>
  <Row>
  <Col sm={6}>
+ <Typography component="legend">Namge plats*</Typography>
  <TextField
-sx={{ borderBottomRightRadius: '12px', borderTopLeftRadius: '0px', borderTopRightRadius: '0px', borderBottomLeftRadius: '0px', height: '100px', color: 'cards.bg', marginTop: "3vh" }} elevation={4}
+sx={{ borderBottomRightRadius: '12px', borderTopLeftRadius: '0px', borderTopRightRadius: '0px', borderBottomLeftRadius: '0px', height: '100px', color: 'cards.bg'}} elevation={4}
   required
   id="outlined-basic"
-  label="Required"
   multiline
-  // defaultValue=" Enter Location"
   variant="outlined"
   type="text"
   name="location"
-  placeholder="Location"
   onChange={handleChange}
  />
  </Col>
-
 </Row>
-
 <Row>
 
- <Col sm={6}>
-
- <TextField
-
-sx={{ borderBottomRightRadius: '12px', borderTopLeftRadius: '12px', borderTopRightRadius: '0px', borderBottomLeftRadius: '0px', height: '100px', color: 'cards.bg', marginTop: "3vh" }} elevation={4}
-
-  required
-
-  id="outlined-basic"
-
-  label="Required"
-
-  multiline
-
-  // defaultValue=" Enter Rating"
-
-  variant="outlined"
-
+{/* <Typography component="legend">Controlled</Typography>
+<Rating
+  name="simple-controlled"
+  value={value}
   type="number"
+  onChange={(event, newValue) => {
+    setValue(newValue), {handleChange};
+  }}
+/> */}
 
-  placeholder="rating"
-
+ <Col sm={6}>
+ <Typography component="legend">Rating med en siffra 1-5*</Typography>
+ <TextField
+sx={{ borderBottomRightRadius: '12px', borderTopLeftRadius: '0px', borderTopRightRadius: '0px', borderBottomLeftRadius: '0px', height: '100px', color: 'cards.bg'}} elevation={4}
+  required
+  id="outlined-basic"
+  multiline
+  variant="outlined"
+  type="number"
   name="rating"
-
   onChange={handleChange}
-
  />
-
  </Col>
 
  <Col sm={6}>
-
+ <Typography component="legend">Lägg till bild*</Typography>
  <TextField
 
-sx={{ borderBottomRightRadius: '12px', borderTopLeftRadius: '12px', borderTopRightRadius: '0px', borderBottomLeftRadius: '0px', height: '100px', color: 'cards.bg', marginTop: "3vh" }} elevation={4}
-
+sx={{ borderBottomRightRadius: '12px', borderTopLeftRadius: '0px', borderTopRightRadius: '0px', borderBottomLeftRadius: '0px', height: '100px', color: 'cards.bg'}} elevation={4}
   required
-
   id="outlined-basic"
-
-  label="Required"
-
   multiline
-
   // defaultValue=" Enter Rating"
-
   variant="outlined"
-
   type="text"
-
-  placeholder="Enter image"
-
   name="image_url"
-
-  onChange={handleChange}
-
- />
-
- </Col>
-
- <Col sm={6}>
-
- <TextField
-
-sx={{ borderBottomRightRadius: '12px', borderTopLeftRadius: '12px', borderTopRightRadius: '0px', borderBottomLeftRadius: '0px', height: '100px', color: 'cards.bg', marginTop: "3vh" }} elevation={4}
-
-  required
-
-  id="outlined-basic"
-
-  multiline
-
-  rows={6}
-
-  label="Required"
-
-  // defaultValue=" Enter Description"
-
-  variant="outlined"
-
-  type="textarea"
-
-  placeholder="Description"
-
-  name="description"
-
   onChange={handleChange}
 
  />
@@ -167,12 +114,23 @@ sx={{ borderBottomRightRadius: '12px', borderTopLeftRadius: '12px', borderTopRig
 </Row>
 
 </Container>
+<Typography component="legend">Beskrivning*</Typography>
+ <TextField
 
-<Button onClick={handleClick} variant="contained" size="large" color="success">
+sx={{borderBottomRightRadius: '0px', borderTopLeftRadius: '0px', borderTopRightRadius: '0px', borderBottomLeftRadius: '0px', width: '50vw', maxWidth: '500px', height: '200px', color: 'cards.bg'}} elevation={4}
+id="outlined-basic"
+  multiline
+  type="textarea"
+  variant="outlined"
+  name="description"
+  rows={4}
+  onChange={handleChange}
 
-  Large
+ />
 
- </Button>
+<button onClick={handleClick} className="postButton">
+Lägg till
+ </button>
 
 {/* <button onClick={handleClick}>Add</button> */}
 

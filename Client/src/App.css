@@ -9,12 +9,12 @@
   overflow-x: hidden;
 }
 body {
-  background: url('../public/smultOpac.png') no-repeat center center fixed;
+  /* background: url('../public/smultOpac.png') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover;
+  -o-background-size: cover; */
   background-size: cover;
-  background-color: rgb(240, 239, 171, 0.5);
+  background-color: rgb(240, 239, 171);
 }
 
 .footer {
@@ -140,3 +140,18 @@ position: absolute;
 
 
 }
+
+.postButton {
+  background-color: #558E2A;
+  border-radius: 16px;
+  border: none;
+padding-top: 1.5vh;
+padding-bottom: 1.5vh;
+padding-left: 6vh;
+padding-right: 6vh;
+font-size: medium;
+cursor: pointer;
+  margin: 2vh;
+
+}
+
