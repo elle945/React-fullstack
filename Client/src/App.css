@@ -30,11 +30,18 @@ padding: 0;
 }
 
 .bgimg {
-  background-image: url('../files/smultOpac.png');
+
+  background-image: url('../public/smultOpac.png');
   background-repeat: no-repeat;
   background-position-x: center;
   opacity: 0.5;
+  height: 100vh;
   background-size: contain;
+  position: absolute;
+  /* z-index: -1; */
+  top: 0;
+
+
 }
 
 .cardImg {
@@ -53,7 +60,7 @@ flex-direction: column;
 }
 
 .welcomeImg {
-    background-image: url('../files/smultOpac.png');
+    background-image: url('../public/smultOpac.png');
     background-repeat: no-repeat;
     background-position-x: center;
     background-size: contain;
@@ -71,7 +78,7 @@ flex-direction: column;
 }
 
 .logoImg {
-  background-image: url(../public/files/logga.png);
+  background-image: url(../public/logga.png);
   background-repeat: no-repeat;
     background-size: contain;
     height: 150px;
@@ -82,5 +89,31 @@ flex-direction: column;
   margin: auto;
 
   width: 150px;
+
+}
+.homeForm {
+  margin: auto;
+  max-width: 80%;
+  min-width: 50%;
+border-radius: 12px 0px 12px 0px;
+background-color: #ECEBEB;
+}
+
+.inputField {
+width: 90%;
+height: 42px;
+border-radius: 12px 0px 12px 0px;
+border: none;
+
+}
+
+.inputBtn {
+height: 42px;
+width: 50px;
+border-radius: 12px 0px 12px 0px;
+border: none;
+background-color: #ECEBEB;
+margin-right: 20px;
+position: absolute;
 
 }

@@ -1,12 +1,8 @@
 import React from 'react'
-
 import { Box, Card, Container, Paper, Typography } from '@mui/material'
-
 import axios from 'axios'
-
 import { useState, useEffect } from 'react'
-
-
+import TuneIcon from '@mui/icons-material/Tune';
 
 
 function HomePage() {
@@ -15,27 +11,32 @@ function HomePage() {
   const [ filterData, setFilterData] = useState([])
   const [welcome, setWelcome] = useState(true)
 
-
-  function fetch() {
+  useEffect(() => {
     axios.get('http://localhost:3000/')
       .then(response => {
+        setFilterData(response.data)
         setData(response.data)
         console.log(data)
 
       })
-  }
-
-  useEffect(() => {
-    fetch();
   }, [])
 
 
 
 
-// function filter() {
-//   const filter = data.find((data) => )
-// }
+function filter(event) {
+  const search = event.target.value;
+  if (search.length <= 0) {
+    setFilterData(data)
+  }
 
+  const searchData = [...data]
+  const matchingName = searchData.filter((item) => {
+    const place = item.location.toLowerCase();
+    return place.includes(search.toLowerCase());
+  });
+  setFilterData(matchingName);
+}
 
 
 
@@ -56,17 +57,19 @@ function HomePage() {
         :
 
         <section className='cardSection'>
-          <div className='bgimg'>
+          <div className='bgimg'></div>
             <Container sx={{ height: "100vh" }}>
 
-              <input type="text" onChange={filter}/>
+              <div className='homeForm'>
+              <input className='inputField'       type="text" onChange={filter}/>
+              <button className='inputBtn'><TuneIcon></TuneIcon></button>
+              </div>
 
-
-              {data.map((item) => (
+              {filterData.map((item) => (
 
                 <Card key={item.id} sx={{ borderBottomRightRadius: '12px', borderTopLeftRadius: '12px', borderTopRightRadius: '0px', borderBottomLeftRadius: '0px', height: '100px', color: 'cards.bg', marginTop: "3vh" }} elevation={4}>
 
-                  <img className='cardImg' src={`files/${item.image_url}`} alt={`files/${item.image_url}`} />
+                  <img className='cardImg' src={`Images/${item.image_url}`} alt={`Images/${item.image_url}`} />
                   <Typography variant='p'>{item.location}</Typography>
                   <Typography variant='p'>{item.description}</Typography>
 
@@ -78,7 +81,7 @@ function HomePage() {
 
 
             </Container>
-          </div>
+
         </section>
       }
 
@@ -86,8 +89,5 @@ function HomePage() {
     </>
   )
 }
-
-
-
 
 export default HomePage
