@@ -58,24 +58,15 @@ const UploadForm = () => {
    }
  }
 
-
-
  return (
 
 <ThemeProvider
  breakpoints={['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}
  minBreakpoint="xxs"
-
 >
 
 <div className="FormContainer">
-
-
-
  <Card sx={{ display: "flex", flexDirection: "column", alignItems: "center", maxWidth: 800, height: 650}}>
-
-
-
 
 <Typography sx={{p: 2, mt: 2}}variant="h5" gutterBottom>Lägg till ditt smultronställe</Typography>
  <Container>
