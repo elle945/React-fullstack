@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -20,3 +22,65 @@ padding: 0;
     align-items: center;
 
   }
+
+.cardSection {
+  background-color: #F0EFAB;
+
+
+}
+
+.bgimg {
+  background-image: url('../files/smultOpac.png');
+  background-repeat: no-repeat;
+  background-position-x: center;
+  opacity: 0.5;
+  background-size: contain;
+}
+
+.cardImg {
+  height: inherit;
+  border-radius: 0px 0px 12px 0px;
+}
+
+.bgWelcome {
+  height: 80vh;
+  width: 100%;
+  background-color: #F0EFAB;
+  display: flex;
+flex-direction: column;
+
+
+}
+
+.welcomeImg {
+    background-image: url('../files/smultOpac.png');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size: contain;
+    max-height: 60vh;
+    min-height: 300px;
+
+
+}
+
+.welcomeText {
+  font-family: 'Bodoni Moda';
+  font-weight: 500;
+  margin: auto;
+
+}
+
+.logoImg {
+  background-image: url(../public/files/logga.png);
+  background-repeat: no-repeat;
+    background-size: contain;
+    height: 150px;
+
+}
+
+.flexFix {
+  margin: auto;
+
+  width: 150px;
+
+}
