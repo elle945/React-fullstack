@@ -5,7 +5,6 @@ import { BrowserRouter } from 'react-router-dom'
 import './App.css'
 import { ThemeProvider, colors, createTheme } from '@mui/material'
 
-
 const theme = createTheme({
   palette: {
     bgcolor: {

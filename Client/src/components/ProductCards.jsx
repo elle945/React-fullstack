@@ -6,8 +6,15 @@ import {useState,useEffect} from "react"
 // import Typography from '@mui/material/Typography';
 
 import Rating from '@mui/material/Rating';
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row, Col, Placeholder } from 'react-bootstrap'
 import '../App.css';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
+
+
 
  function ProductCards() {
 
@@ -41,6 +48,12 @@ const fetchData = () => {
   sortedData.sort((a, b) => b.rating - a.rating);
   setData(sortedData);
 }
+const lowRating = () => {
+  const sortedData = [...data];
+  sortedData.sort((a, b) => a.rating - b.rating);
+  setData(sortedData);
+}
+
 
 
 const searchName = (event) => {
@@ -67,8 +80,26 @@ const searchName = (event) => {
  </div>
 
 <div style={{width: '50%', margin: 'auto', marginTop: '2em'}}>
-  <input className='inputField' onInput={searchName} type='text'></input>
-  <button className='inputBtn2' onClick={highRating}>HEJ</button>
+  <input className='inputField' placeholder='Sök på en plats..' onInput={searchName} type='text'></input>
+  <div style={{ marginTop:'5vh' }}>
+ <FormLabel  id="demo-radio-buttons-group-label">Sortera efter:</FormLabel>
+  <RadioGroup
+  row
+    aria-labelledby="demo-radio-buttons-group-label"
+    name="radio-buttons-group"
+    // sx={{
+    //   backgroundColor: pink[800],
+    //   '&.Mui-checked': {
+    //     color: pink[600],
+    //   },
+    // }}
+    
+  >
+    <FormControlLabel onClick={highRating} value="highRating" control={<Radio/>} label="Högsta rating" />
+    <FormControlLabel onClick={lowRating} value="lowRating" control={<Radio />} label="Lägsta rating" />
+    
+  </RadioGroup>
+  </div>
   </div>
   <Container className='CardContainer'>
  <Row>
