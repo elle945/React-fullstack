@@ -1,6 +1,9 @@
 import React from 'react'
+
 import { Box, Card, Container, Paper, Typography } from '@mui/material'
+
 import axios from 'axios'
+
 import { useState, useEffect } from 'react'
 
 
@@ -83,5 +86,8 @@ function HomePage() {
     </>
   )
 }
+
+
+
 
 export default HomePage
