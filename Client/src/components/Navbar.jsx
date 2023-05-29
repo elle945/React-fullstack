@@ -3,6 +3,9 @@ import { AppBar, Toolbar, IconButton, Typography, Drawer, List, ListItem, ListIt
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
 import HomePage from '../pages/Home';
+import HomeIcon from '@mui/icons-material/Home';
+import PlaceIcon from '@mui/icons-material/Place';
+import ShareIcon from '@mui/icons-material/Share';
 function Navbar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -21,16 +24,19 @@ function Navbar() {
         </IconButton>
 
       </Toolbar>
-      <Drawer anchor="right" open={isDrawerOpen} onClose={toggleDrawer}>
-        <List>
+      <Drawer  anchor="right" open={isDrawerOpen} onClose={toggleDrawer}>
+        <List sx={{bgcolor: 'bgcolor.bg', height: '100%'}} >
           <ListItem button onClick={toggleDrawer}>
-            <Link to={"/"}>Hem</Link>
+            <HomeIcon/>
+            <Link to={"/"} style={{color: 'black', textDecoration: 'none'}}>Hem</Link>
           </ListItem>
           <ListItem button onClick={toggleDrawer}>
-            <Link to={"/platser"}>Platser</Link>
+            <PlaceIcon/>
+            <Link to={"/platser"} style={{color: 'black', textDecoration: 'none'}}>Platser</Link>
           </ListItem>
           <ListItem button onClick={toggleDrawer}>
-            <Link to={"/recensioner"}>Lämna recension</Link>
+            <ShareIcon/>
+            <Link to={"/recensioner"} style={{color: 'black', textDecoration: 'none'}}>Ladda upp din favoritplats</Link>
           </ListItem>
         </List>
       </Drawer>

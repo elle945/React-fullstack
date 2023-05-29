@@ -4,7 +4,6 @@ function PlacesPage() {
   return (
     <>
     <ProductCards/>
-    <div>hej</div>
     </>
   )
 }
