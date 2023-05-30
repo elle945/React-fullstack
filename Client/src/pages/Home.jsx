@@ -10,6 +10,8 @@ function HomePage() {
   const [data, setData] = useState([])
   const [ filterData, setFilterData] = useState([])
   const [welcome, setWelcome] = useState(true)
+  const [boolean, setBoolean] = useState(true)
+  const [eventData, setEventData] = useState(null)
 
   useEffect(() => {
     axios.get('http://localhost:3000/')
@@ -26,17 +28,26 @@ function HomePage() {
 
 function filter(event) {
   const search = event.target.value;
+  setEventData(event.target.value)
   if (search.length <= 0) {
     setFilterData(data)
+    setBoolean(true)
+
   }
 
   const searchData = [...data]
+  setBoolean(false)
   const matchingName = searchData.filter((item) => {
     const place = item.location.toLowerCase();
     return place.includes(search.toLowerCase());
   });
+
   setFilterData(matchingName);
+  console.log(filterData)
+
 }
+
+
 
 
 
@@ -61,13 +72,13 @@ function filter(event) {
             <Container sx={{ height: "100vh" }}>
 
               <div className='homeForm'>
-              <input className='inputField'       type="text" value="Sök efter plats..." onChange={filter}/>
+              <input className='inputField' type="text" value={boolean ? "Sök efter plats..." : eventData} onChange={filter}/>
               <button className='inputBtn'><TuneIcon></TuneIcon></button>
               </div>
 
-              {filterData.map((item) => (
+              {filterData.map((item, index) => (
 
-                <Card key={item.id} sx={{ borderBottomRightRadius: '12px', borderTopLeftRadius: '12px', borderTopRightRadius: '0px', borderBottomLeftRadius: '0px', height: '100px', color: 'cards.bg', marginTop: "3vh", display:"flex"}} elevation={4}>
+                <Card key={index} sx={{ borderBottomRightRadius: '12px', borderTopLeftRadius: '12px', borderTopRightRadius: '0px', borderBottomLeftRadius: '0px', height: '100px', color: 'cards.bg', marginTop: "3vh", display:"flex"}} elevation={4}>
 
                   <img className='cardImg' src={`Images/${item.image_url}`} alt={`Images/${item.image_url}`} />
 
