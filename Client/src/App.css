@@ -43,12 +43,9 @@ padding: 0;
   background-image: url('../public/smultOpac.png');
   background-repeat: no-repeat;
   background-position-x: center;
-  opacity: 0.5;
   height: 100vh;
   background-size: contain;
-  position: absolute;
-  /* z-index: -1; */
-  top: 0;
+
 
 
 }
@@ -56,6 +53,7 @@ padding: 0;
 .cardImg {
   height: inherit;
   border-radius: 0px 0px 12px 0px;
+  max-width: 120px;
 }
 
 .bgWelcome {
