@@ -13,18 +13,21 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
+import OutdoorGrillIcon from '@mui/icons-material/OutdoorGrill';
 
 
 
  function ProductCards() {
 
  const [data, setData] = useState([])
+ const [icon, setIcon] = useState([])
 
   useEffect(() => {
   axios.get('http://localhost:3000/locationinfos')
  .then(response => {
    setData(response.data);
-   console.log(data);
+   setIcon(response.data.map(item => item.bbq))
+   //console.log(data);
  })
  .catch(() => {
  //handle errors
@@ -37,7 +40,8 @@ const fetchData = () => {
   axios.get('http://localhost:3000/locationinfos')
   .then(response => {
     setData(response.data);
-    console.log(data);
+    
+    //console.log(data);
   })
   .catch(() => {
   //handle errors
@@ -103,7 +107,7 @@ const searchName = (event) => {
   </div>
   <Container className='CardContainer'>
  <Row>
-  {data.map((item) => (
+  {data.map((item, index) => (
    <Col xl={12} md={4} key={item.id}>
     <Card style={{ width: '80vw', paddingBottom: '10vh', backgroundColor: 'white', margin: 'auto', marginTop: '10px' }}>
     <Card.Img style={{ width: '80vw' }} variant="top" src={`Images/${item.image_url}`} />
@@ -114,12 +118,18 @@ const searchName = (event) => {
     {item.description}
      </Card.Text>
      <Rating style={{padding: '1em'}} name="read-only" value={item.rating} readOnly />
+    
+    <div>
+      {/* Ternary operator checks if statement (icon[index]) */}
+    {icon[index] ? <OutdoorGrillIcon/>  : null}
+     </div>
     </Card.Body>
     </Card>
    </Col>
   ))}
  </Row>
  </Container>
+
  </div>
  );
 

@@ -8,7 +8,6 @@ import Card from '@mui/material/Card';
 import TextField from '@mui/material/TextField';
 import {Container, Row, Col } from 'react-bootstrap';
 import Typography from '@mui/material/Typography';
-import { Box } from "@mui/material";
 import '../App.css';
 // import Rating from '@mui/material/Rating';
 
@@ -16,6 +15,7 @@ import '../App.css';
 const UploadForm = () => {
 
   // const [value, setValue] = React.useState(2);
+const [confirmed, setConfirmed] = useState(false) 
 const [info, setInfo] = useState({
 
  location : "",
@@ -39,8 +39,10 @@ e.preventDefault();
 
 try{
   await axios.post("http://localhost:3000/locationinfos", info);
+  setConfirmed(true)
  } catch (err) {
   console.log(err)
+  
   setError(true)
  }}
 
@@ -133,8 +135,12 @@ Lägg till
  </button>
 
 {/* <button onClick={handleClick}>Add</button> */}
+<div>
+{confirmed &&  <p>Din post har laddats upp!</p>}
+{error &&   <p>"Something is wrong"</p>}
+</div>
 
-{error && "Something is wrong"}
+
 
 
  </Card >
