@@ -123,10 +123,7 @@ app.get('/locationinfos', async (req, res) => {
 
 
 
-//POST , så att vi kan skapa böcker
-
-
-
+//POST , 
 
 app.post('/locationinfos', async (req, res) => {
  const { location, description, rating, image_url } = req.body
@@ -137,6 +134,22 @@ app.post('/locationinfos', async (req, res) => {
  )
  res.send('image added')
 
+})
+
+// Delete 
+app.delete('/locationinfos/:id', async (req, res) => {
+  try {const id = req.params.id
+  const result = await client.query( 'DELETE FROM locationinfos WHERE location_id = $1 RETURNING *', [id])
+  if (result.rows.length > 0) {
+      //200 för Ok
+      res.status(200).send('Deleted sucessfully');
+    } else {
+      // 404 för ej hittad id
+      res.status(404).send('Animal not found');
+    }
+} catch (error){
+  res.status(500).send('Server error')
+}
 })
 
 
