@@ -9,6 +9,7 @@ import TextField from '@mui/material/TextField';
 import {Container, Row, Col } from 'react-bootstrap';
 import Typography from '@mui/material/Typography';
 import '../App.css';
+import Radio from '@mui/material/Radio';
 // import Rating from '@mui/material/Rating';
 
 
@@ -21,17 +22,25 @@ const [info, setInfo] = useState({
  location : "",
  description: "",
  rating: Number,
- image_url: ""
+ image_url: "",
+ bbq: Boolean
 })
 
 const [error, setError]=useState(false);
 
 //Tar in allt som skrivs i varje input
 
+{/* 
 const handleChange = (e) => {
  setInfo((prev) => ({...prev, [e.target.name]: e.target.value}));
 }
+*/}
 
+const handleChange = (e) => {
+  const { name, value, type, checked } = e.target;
+  const newValue = type === "radio" ? (checked ? true : false) : value;
+  setInfo((prev) => ({ ...prev, [name]: newValue }));
+};
 //Tar all information som skrivits in och skapar en POST
 
 const handleClick = async (e) => {
@@ -129,6 +138,28 @@ id="outlined-basic"
   onChange={handleChange}
 
  />
+ <div>
+  <label>
+    Grillplats tillgängligt:
+    <Radio 
+      checked={info.bbq === true}
+      onChange={handleChange}
+      value={true}
+      color="success"
+      name="bbq"
+    />
+  </label>
+  <label>
+    Grillplats inte tillgängligt:
+    <Radio 
+     checked={info.bbq === false}
+     onChange={handleChange}
+     value={false}
+     color="success"
+     name="bbq"
+    />
+  </label>
+</div>
 
 <button onClick={handleClick} className="postButton">
 Lägg till
@@ -137,7 +168,7 @@ Lägg till
 {/* <button onClick={handleClick}>Add</button> */}
 <div>
 {confirmed &&  <p>Din post har laddats upp!</p>}
-{error &&   <p>"Something is wrong"</p>}
+{error &&   <p>"Allt fällt måste vara ifyllda. Vänligen korrigera och försök igen!"</p>}
 </div>
 
 

@@ -94,7 +94,7 @@ app.get('/', async (req, res) => {
   }
   catch (err) {
     console.error(err);
-    res.status(500).send('Error retrieving persons');
+    res.status(500).send('Error retrieving locationinfos');
   }
 })
 app.get('/:id', async (req, res) => {
@@ -115,7 +115,7 @@ app.get('/locationinfos', async (req, res) => {
  res.json(result.rows)
  } catch (err) {
  console.error(err)
- res.status(500).send('Error retrieving persons')
+ res.status(500).send('Error retrieving locationinfos')
  }
 
 })
@@ -126,13 +126,13 @@ app.get('/locationinfos', async (req, res) => {
 //POST , 
 
 app.post('/locationinfos', async (req, res) => {
- const { location, description, rating, image_url } = req.body
- const values = [location, description, rating, image_url]
+ const { location, description, rating, image_url, bbq } = req.body
+ const values = [location, description, rating, image_url, bbq]
  await client.query(
- 'INSERT INTO locationinfos (location, description, rating, image_url) VALUES($1,$2,$3,$4)',
+ 'INSERT INTO locationinfos (location, description, rating, image_url, bbq) VALUES($1,$2,$3,$4,$5)',
  values
  )
- res.send('image added')
+ res.send('Post successfully added')
 
 })
 
@@ -145,7 +145,7 @@ app.delete('/locationinfos/:id', async (req, res) => {
       res.status(200).send('Deleted sucessfully');
     } else {
       // 404 för ej hittad id
-      res.status(404).send('Animal not found');
+      res.status(404).send('Post with given ID not found');
     }
 } catch (error){
   res.status(500).send('Server error')
