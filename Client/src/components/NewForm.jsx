@@ -5,7 +5,7 @@ import { Typography } from '@mui/material';
 import axios from "axios"
 import {useState} from "react"
 import '../App.css';
-import Webcam from './Webcam';
+import Webcam2 from './Webcam2';
 
 
 
@@ -46,13 +46,18 @@ const handleSubmit = async (e) => {
      }}
     
 
+     // Lägger man till detta i Form tagen så gör formen submit på enter = onSubmit={handleSubmit}
+
   return (
    
     <div className='formBg' >
          <Typography sx={{m: 'auto'}}variant="h5" gutterBottom>Lägg till ditt smultronställe</Typography>
          <div className='outerForm'>
-    <Form className='newForm' onSubmit={handleSubmit}>
+    <Form className='newForm' >
       <Form.Group className="mb-3" controlId="location">
+      <Form.Text className="text-muted">
+          Fältet är obligatoriskt*
+        </Form.Text>
         <FloatingLabel
         controlId="location"
         label="Namnge plats"
@@ -62,15 +67,15 @@ const handleSubmit = async (e) => {
   onChange={handleChange} required isInvalid/>
         </FloatingLabel>
         <Form.Control.Feedback type="invalid">
-        Please choose a username.
+        Please fill in
       </Form.Control.Feedback>
-        <Form.Text className="text-muted">
-          Fältet är obligatoriskt*
-        </Form.Text>
       </Form.Group>
 
 
       <Form.Group className="mb-3" controlId="rating">
+      <Form.Text className="text-muted">
+          Fältet är obligatoriskt*
+        </Form.Text>
         <FloatingLabel
         controlId="rating"
         label="Ge rating där ifrån 1-5"
@@ -85,9 +90,6 @@ const handleSubmit = async (e) => {
       <option value="5">5</option>
     </Form.Control>
         </FloatingLabel>
-        <Form.Text className="text-muted">
-          Fältet är obligatoriskt*
-        </Form.Text>
       </Form.Group>
 
 
@@ -99,14 +101,15 @@ const handleSubmit = async (e) => {
       >
         <Form.Control type="file" multiple  name="image_url"
   onChange={handleChange}/>
-   
+  
+   <Webcam2 />
         </FloatingLabel>
-        <Form.Text className="text-muted">
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="description">
+      <Form.Text className="text-muted">
           Fältet är obligatoriskt*
         </Form.Text>
-      </Form.Group>
-<Webcam />
-      <Form.Group className="mb-3" controlId="description">
         <FloatingLabel
         controlId="description"
         label="Ge din beskrivning"
@@ -114,15 +117,11 @@ const handleSubmit = async (e) => {
       >
         <Form.Control as="textarea" type="text" rows={4}  placeholder="Ge din beskrivning" name="description"   onChange={handleChange} />
         </FloatingLabel>
-        <Form.Text className="text-muted">
-          Fältet är obligatoriskt*
-        </Form.Text>
       </Form.Group>
-
-
       <Form.Group className="mb-3" controlId="bbq">
         <Form.Check type="checkbox" label="Grillplats är tillgängligt" name="bbq" onChange={handleChange} />
       </Form.Group>
+     
       <Button variant="success" type="submit" onClick={handleSubmit} className="postButton">
         Lägg till
       </Button>

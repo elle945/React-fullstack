@@ -28,7 +28,7 @@ const [info, setInfo] = useState({
 
 const [error, setError]=useState(false);
 
-//Tar in allt som skrivs i varje input
+
 
 {/*
 const handleChange = (e) => {
@@ -183,3 +183,4 @@ Lägg till
 }
 
 export default UploadForm
+
