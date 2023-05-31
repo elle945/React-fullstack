@@ -10,6 +10,8 @@ function HomePage() {
   const [data, setData] = useState([])
   const [ filterData, setFilterData] = useState([])
   const [welcome, setWelcome] = useState(true)
+  const [boolean, setBoolean] = useState(true)
+  const [eventData, setEventData] = useState(null)
 
   useEffect(() => {
     axios.get('http://localhost:3000/')
@@ -26,17 +28,26 @@ function HomePage() {
 
 function filter(event) {
   const search = event.target.value;
+  setEventData(event.target.value)
   if (search.length <= 0) {
     setFilterData(data)
+    setBoolean(true)
+
   }
 
   const searchData = [...data]
+  setBoolean(false)
   const matchingName = searchData.filter((item) => {
     const place = item.location.toLowerCase();
     return place.includes(search.toLowerCase());
   });
+
   setFilterData(matchingName);
+  console.log(filterData)
+
 }
+
+
 
 
 
@@ -57,31 +68,32 @@ function filter(event) {
         :
 
         <section className='cardSection'>
-          <div className='bgimg'></div>
+          <div className='bgimg'>
             <Container sx={{ height: "100vh" }}>
 
               <div className='homeForm'>
-              <input className='inputField'       type="text" value="Sök efter plats..." onChange={filter}/>
+              <input className='inputField' type="text" placeholder='Sök efter plats' value={eventData} onChange={filter}/>
               <button className='inputBtn'><TuneIcon></TuneIcon></button>
               </div>
 
-              {filterData.map((item) => (
+              {filterData.map((item, index) => (
 
-                <Card key={item.id} sx={{ borderBottomRightRadius: '12px', borderTopLeftRadius: '12px', borderTopRightRadius: '0px', borderBottomLeftRadius: '0px', height: '100px', color: 'cards.bg', marginTop: "3vh" }} elevation={4}>
+                <Card key={index} sx={{ borderBottomRightRadius: '12px', borderTopLeftRadius: '12px', borderTopRightRadius: '0px', borderBottomLeftRadius: '0px', height: '100px', color: 'cards.bg', marginTop: "3vh", display:"flex"}} elevation={4}>
 
                   <img className='cardImg' src={`Images/${item.image_url}`} alt={`Images/${item.image_url}`} />
-                  <Typography variant='p'>{item.location}</Typography>
-                  <Typography variant='p'>{item.description}</Typography>
 
 
-                  {/* <Rating name="read-only" value={item.rating} readOnly /> */}
+                      <Typography variant='p' align="center" sx={{fontSize: "14pt", fontWeight: "400", margin:"auto", height:"inherit", marginTop:"2rem"}}>{item.location}</Typography>
+
+
+
 
                 </Card>
               ))}
 
 
             </Container>
-
+            </div>
         </section>
       }
 
