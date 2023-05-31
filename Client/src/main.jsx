@@ -2,8 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
-import './App.css'
 import { ThemeProvider, colors, createTheme } from '@mui/material'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
 
 const theme = createTheme({
   palette: {
