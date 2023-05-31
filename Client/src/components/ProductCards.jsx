@@ -39,7 +39,7 @@ const fetchData = () => {
   axios.get('http://localhost:3000/locationinfos')
   .then(response => {
     setData(response.data);
-    
+
     //console.log(data);
   })
   .catch(() => {
@@ -107,7 +107,7 @@ const searchName = (event) => {
 
   <Container className='CardContainer'>
 
-  {data.map((item) => (
+  {data.map((item, index) => (
    <Col  sm={6} key={item.id}>
     <Card style={{  width: '50%', backgroundColor: 'white', margin: 'auto', marginBottom: '2em',  borderRadius: '10px', gap: '10px' }}>
     <Card.Img style={{ width: '100%' }} variant="top" src={`Images/${item.image_url}`} />
@@ -119,7 +119,7 @@ const searchName = (event) => {
     {item.description}
      </Card.Text>
      <Rating style={{padding: '1em'}} name="read-only" value={item.rating} readOnly />
-    
+
     <div>
       {/* Ternary operator checks if statement (icon[index]) */}
     {icon[index] ? <OutdoorGrillIcon/>  : null}
@@ -128,7 +128,6 @@ const searchName = (event) => {
     </Card>
    </Col>
   ))}
-{/*  </Row> */}
  </Container>
 
  </div>
