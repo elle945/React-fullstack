@@ -56,7 +56,7 @@ return (
 <Container>
  <Row>
  <Col sm={6}>
- <Typography component="legend">Namge plats*</Typography>
+ <Typography component="legend">Namnge plats*</Typography>
  <TextField
 sx={{ borderBottomRightRadius: '12px', borderTopLeftRadius: '0px', borderTopRightRadius: '0px', borderBottomLeftRadius: '0px', height: '100px', color: 'cards.bg'}} elevation={4}
   required

@@ -102,6 +102,8 @@ flex-direction: column;
 
 .CardContainer {
 margin-top: 8vh;
+
+
 }
 .homeForm {
   margin: auto;
@@ -152,4 +154,3 @@ cursor: pointer;
   margin: 2vh;
 
 }
-

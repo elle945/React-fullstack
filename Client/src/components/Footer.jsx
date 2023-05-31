@@ -5,9 +5,9 @@ function Footer() {
     return (
 
 
-      
 
-      <AppBar position="static" style={{position: 'fixed', bottom: 0, width: "100%"}} sx={{bgcolor: 'bgcolor.bg'}}>
+
+      <AppBar position="static" style={{position: 'relative', bottom: 0, width: "100%"}} sx={{bgcolor: 'bgcolor.bg'}}>
 
         <Toolbar style={{ display: 'flex', justifyContent: 'center' }}>
           <Typography variant="body1" color="black" >

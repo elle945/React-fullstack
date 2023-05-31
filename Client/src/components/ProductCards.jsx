@@ -1,12 +1,11 @@
 // import Button from 'react-bootstrap/Button';
 
-import Card from 'react-bootstrap/Card';
 import axios from "axios"
 import {useState,useEffect} from "react"
 // import Typography from '@mui/material/Typography';
 
 import Rating from '@mui/material/Rating';
-import { Container, Row, Col, Placeholder } from 'react-bootstrap'
+import { Container, Row, Col, Card } from 'react-bootstrap'
 import '../App.css';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
@@ -97,20 +96,22 @@ const searchName = (event) => {
     //     color: pink[600],
     //   },
     // }}
-    
+
   >
     <FormControlLabel onClick={highRating} value="highRating" control={<Radio/>} label="Högsta rating" />
     <FormControlLabel onClick={lowRating} value="lowRating" control={<Radio />} label="Lägsta rating" />
-    
+
   </RadioGroup>
   </div>
   </div>
+
   <Container className='CardContainer'>
- <Row>
-  {data.map((item, index) => (
-   <Col xl={12} md={4} key={item.id}>
-    <Card style={{ width: '80vw', paddingBottom: '10vh', backgroundColor: 'white', margin: 'auto', marginTop: '10px' }}>
-    <Card.Img style={{ width: '80vw' }} variant="top" src={`Images/${item.image_url}`} />
+
+  {data.map((item) => (
+   <Col  sm={6} key={item.id}>
+    <Card style={{  width: '50%', backgroundColor: 'white', margin: 'auto', marginBottom: '2em',  borderRadius: '10px', gap: '10px' }}>
+    <Card.Img style={{ width: '100%' }} variant="top" src={`Images/${item.image_url}`} />
+
     <Card.Body>
      <Card.Title style={{paddingTop: '1em', paddingLeft: '1em'}}><b>{item.location}</b></Card.Title>
      <br></br>
@@ -127,7 +128,7 @@ const searchName = (event) => {
     </Card>
    </Col>
   ))}
- </Row>
+{/*  </Row> */}
  </Container>
 
  </div>
