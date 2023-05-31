@@ -102,7 +102,7 @@ const handleSubmit = async (e) => {
         <Form.Control type="file" multiple  name="image_url"
   onChange={handleChange}/>
   
-   <Webcam2 />
+ 
         </FloatingLabel>
       </Form.Group>
 
