@@ -121,7 +121,7 @@ const searchName = (event) => {
     
     <div>
       {/* Ternary operator checks if statement (icon[index]) */}
-    {icon[index] ? <OutdoorGrillIcon/>  : null}
+    {icon[index] ? <OutdoorGrillIcon/>  : true}
      </div>
     </Card.Body>
     </Card>
