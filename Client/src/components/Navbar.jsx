@@ -16,8 +16,9 @@ function Navbar() {
   return (
     <AppBar position="static" sx={{bgcolor: 'bgcolor.bg'}} className='navbar'>
       <Toolbar>
-      <Typography variant="h2" component="div" sx={{ flexGrow: 1 }}>
-          SMULTRONSTÄLLET
+      <Typography variant="h2" component="div" sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <Link style={{textDecoration: 'none', color: 'black', fontFamily: 'Bodoni Moda', letterSpacing: '-0.00833em', fontSize: '20pt', fontWeight: '300', lineHeight: '1.2', flexGrow: 1, margin: '0', WebkitBoxFlex: '1', overflowY: 'hidden'}} to={"/"}>SMULTRONSTÄLLET</Link>
+
         </Typography>
         <IconButton edge="end" color="black" onClick={toggleDrawer} sx={{ mr: 2 }}>
           <MenuIcon />
