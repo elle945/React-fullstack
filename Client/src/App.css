@@ -161,3 +161,37 @@ margin-bottom: 10vh;
 align-items: center;
   height: auto;
 }
+
+.my-modal {
+  display: none;
+}
+
+.my-modal--show {
+  display: block;
+}
+
+.outerForm {
+  width: 80%;
+  max-width: 650px ;
+  margin: auto;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  padding: 30px;
+ background-color:rgba(255, 255, 255, 0.785);
+ box-sizing: border-box;
+ border-left: 10px solid #e3da96;
+ border-right: 10px solid #525252;
+ border-radius: 8px;
+ background-image: -webkit-linear-gradient(left, #e3da96 50%, #525252 50%), -webkit-linear-gradient(left, #e3da96 50%, #525252 50%);
+ background-image: -moz-linear-gradient(left, #e3da96 50%, #525252 50%), -moz-linear-gradient(left,#e3da96 50%, #525252 50%);
+ background-image: -o-linear-gradient(left, #e3da96 50%, #525252 50%), -o-linear-gradient(left, #e3da96 50%, #525252 50%);
+ background-image: linear-gradient(to right, #e3da96 50%, #525252 50%), linear-gradient(to right,#e3da96 50%, #525252 50%);
+ background-position: 0 0, 0 100% ;
+ background-repeat: no-repeat;
+ background-size: 100% 10px;
+}
+
+.formBg{
+  background-color: #F0EFAB;
+
+}
