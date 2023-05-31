@@ -1,4 +1,5 @@
 // import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import axios from "axios"
 import {useState,useEffect} from "react"
@@ -79,8 +80,8 @@ const searchName = (event) => {
 
 
  return ( <div>
-  <div className='bgimg'>
- </div>
+  <div style={{backgroundColor:'rgb(240, 239, 171)'}}>
+
 
 <div style={{width: '50%', margin: 'auto', marginTop: '2em'}}>
   <input className='inputField' placeholder='Sök på en plats..' onInput={searchName} type='text'></input>
@@ -94,6 +95,7 @@ const searchName = (event) => {
     //   backgroundColor: pink[800],
     //   '&.Mui-checked': {
     //     color: pink[600],
+
     //   },
     // }}
 
@@ -108,8 +110,8 @@ const searchName = (event) => {
   <Container className='CardContainer'>
 
   {data.map((item, index) => (
-   <Col  sm={6} key={item.id}>
-    <Card style={{  width: '50%', backgroundColor: 'white', margin: 'auto', marginBottom: '2em',  borderRadius: '10px', gap: '10px' }}>
+   <Col  sm={12} lg={12} key={item.id} style={{width: '70%', margin: 'auto'}}>
+    <Card style={{margin: '1em'}}>
     <Card.Img style={{ width: '100%' }} variant="top" src={`Images/${item.image_url}`} />
 
     <Card.Body>
@@ -129,7 +131,7 @@ const searchName = (event) => {
    </Col>
   ))}
  </Container>
-
+ </div>
  </div>
  );
 

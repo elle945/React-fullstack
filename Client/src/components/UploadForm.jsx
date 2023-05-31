@@ -16,7 +16,7 @@ import Radio from '@mui/material/Radio';
 const UploadForm = () => {
 
   // const [value, setValue] = React.useState(2);
-const [confirmed, setConfirmed] = useState(false) 
+const [confirmed, setConfirmed] = useState(false)
 const [info, setInfo] = useState({
 
  location : "",
@@ -30,7 +30,7 @@ const [error, setError]=useState(false);
 
 //Tar in allt som skrivs i varje input
 
-{/* 
+{/*
 const handleChange = (e) => {
  setInfo((prev) => ({...prev, [e.target.name]: e.target.value}));
 }
@@ -51,23 +51,23 @@ try{
   setConfirmed(true)
  } catch (err) {
   console.log(err)
-  
+
   setError(true)
  }}
 
 return (
 
 
-
+<div style={{backgroundColor:'rgb(240, 239, 171)'}}>
 <div className="FormContainer">
-<Card sx={{ pb: "10vh", mb: "10vh", display: "flex", flexDirection: "column", alignItems: "center", width:'80vh', height: 'auto'}}>
+<Card className="formCard" >
 <Typography sx={{p: 2, mt: 2}}variant="h5" gutterBottom>Lägg till ditt smultronställe</Typography>
-<Container>
+<Container style={{margin: 'auto', padding: '20vw'}}>
  <Row>
- <Col sm={6}>
+ <Col sm={12} lg={12} >
  <Typography component="legend">Namnge plats*</Typography>
  <TextField
-sx={{ borderBottomRightRadius: '12px', borderTopLeftRadius: '0px', borderTopRightRadius: '0px', borderBottomLeftRadius: '0px', height: '100px', color: 'cards.bg'}} elevation={4}
+sx={{ borderBottomRightRadius: '12px', borderTopLeftRadius: '0px', borderTopRightRadius: '0px', borderBottomLeftRadius: '0px', height: '100px', color: 'cards.bg', textAlign: 'center'}} elevation={4}
   required
   id="outlined-basic"
   multiline
@@ -90,7 +90,7 @@ sx={{ borderBottomRightRadius: '12px', borderTopLeftRadius: '0px', borderTopRigh
   }}
 /> */}
 
- <Col sm={6}>
+ <Col sm={12}>
  <Typography component="legend">Rating med en siffra 1-5*</Typography>
  <TextField
 sx={{ borderBottomRightRadius: '12px', borderTopLeftRadius: '0px', borderTopRightRadius: '0px', borderBottomLeftRadius: '0px', height: '100px', color: 'cards.bg'}} elevation={4}
@@ -104,7 +104,7 @@ sx={{ borderBottomRightRadius: '12px', borderTopLeftRadius: '0px', borderTopRigh
  />
  </Col>
 
- <Col sm={6}>
+ <Col sm={12}>
  <Typography component="legend">Lägg till bild*</Typography>
  <TextField
 
@@ -128,7 +128,7 @@ sx={{ borderBottomRightRadius: '12px', borderTopLeftRadius: '0px', borderTopRigh
 <Typography component="legend">Beskrivning*</Typography>
  <TextField
 
-sx={{borderBottomRightRadius: '0px', borderTopLeftRadius: '0px', borderTopRightRadius: '0px', borderBottomLeftRadius: '0px', width: '50vw', maxWidth: '500px', height: '200px', color: 'cards.bg'}} elevation={4}
+sx={{borderBottomRightRadius: '0px', borderTopLeftRadius: '0px', borderTopRightRadius: '0px', borderBottomLeftRadius: '0px', width: '50vw', maxWidth: '500px', height: '200px', color: 'cards.bg', margin: 'auto', padding: '5vw'}} elevation={4}
 id="outlined-basic"
   multiline
   type="textarea"
@@ -141,7 +141,7 @@ id="outlined-basic"
  <div>
   <label>
     Grillplats tillgängligt:
-    <Radio 
+    <Radio
       checked={info.bbq === true}
       onChange={handleChange}
       value={true}
@@ -151,7 +151,7 @@ id="outlined-basic"
   </label>
   <label>
     Grillplats inte tillgängligt:
-    <Radio 
+    <Radio
      checked={info.bbq === false}
      onChange={handleChange}
      value={false}
@@ -177,7 +177,7 @@ Lägg till
  </Card >
 
 </div>
-
+</div>
 )
 
 }

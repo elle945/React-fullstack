@@ -57,7 +57,7 @@ padding: 0;
 }
 
 .bgWelcome {
-  height: 80vh;
+  height: 88vh;
   width: 100%;
   background-color: #F0EFAB;
   display: flex;
@@ -153,4 +153,11 @@ font-size: medium;
 cursor: pointer;
   margin: 2vh;
 
+}
+
+.formCard  {
+padding-bottom: 10vh;
+margin-bottom: 10vh;
+align-items: center;
+  height: auto;
 }
