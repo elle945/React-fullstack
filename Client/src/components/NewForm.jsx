@@ -1,11 +1,10 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
-import { Typography } from '@mui/material';
 import axios from "axios"
 import {useState} from "react"
 import '../App.css';
-import Webcam2 from './Webcam2';
+
 
 
 
@@ -14,15 +13,16 @@ function NewForm() {
     // const [value, setValue] = React.useState(2);
   const [confirmed, setConfirmed] = useState(false)
   const initialInfoState = {
-    location: "",
-    description: "",
+    location: null,
+    description: null,
     rating: 1,
-    image_url: "",
+    image_url: null,
     bbq: false
  };
- 
+
+   
  const [info, setInfo] = useState(initialInfoState);
-  
+
   const [error, setError]=useState(false);
   
 //Läser in varje input
@@ -32,9 +32,12 @@ function NewForm() {
 
    //Tar all information som skrivits in och skapar en POST
 const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    
+  if(info.location === "" || info.description === "") {
+    setError(true)
+    return;
+}
+  
+   e.preventDefault();
     try{
       await axios.post("http://localhost:3000/locationinfos", info);
       setConfirmed(true)
@@ -45,15 +48,18 @@ const handleSubmit = async (e) => {
       setError(true)
      }}
     
+     //Refresh form
+    
+
 
      // Lägger man till detta i Form tagen så gör formen submit på enter = onSubmit={handleSubmit}
 
   return (
    
     <div className='formBg' >
-         <Typography sx={{m: 'auto'}}variant="h5" gutterBottom>Lägg till ditt smultronställe</Typography>
+         <h4 className='formHeader'>Lägg till ditt smultronställe</h4>
          <div className='outerForm'>
-    <Form className='newForm' >
+    <Form className='newForm' onSubmit={handleSubmit} >
       <Form.Group className="mb-3" controlId="location">
       <Form.Text className="text-muted">
           Fältet är obligatoriskt*
@@ -64,11 +70,8 @@ const handleSubmit = async (e) => {
         className="mb-3"
       >
         <Form.Control as="input" type="text" placeholder="Namnge plats" name="location"
-  onChange={handleChange} required isInvalid/>
+  onChange={handleChange} />
         </FloatingLabel>
-        <Form.Control.Feedback type="invalid">
-        Please fill in
-      </Form.Control.Feedback>
       </Form.Group>
 
 
@@ -101,8 +104,6 @@ const handleSubmit = async (e) => {
       >
         <Form.Control type="file" multiple  name="image_url"
   onChange={handleChange}/>
-  
- 
         </FloatingLabel>
       </Form.Group>
 
@@ -125,8 +126,9 @@ const handleSubmit = async (e) => {
       <Button variant="success" type="submit" onClick={handleSubmit} className="postButton">
         Lägg till
       </Button>
+      
       <div>
-{confirmed &&  <p>Din post har laddats upp!</p>}
+      {confirmed &&  <div><p>Din post har laddats upp!</p></div>}
 {error &&   <p>"Allt fällt måste vara ifyllda. Vänligen korrigera och försök igen!"</p>}
 </div>
     </Form>
