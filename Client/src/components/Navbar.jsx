@@ -27,18 +27,24 @@ function Navbar() {
       </Toolbar>
       <Drawer  anchor="right" open={isDrawerOpen} onClose={toggleDrawer}>
         <List sx={{bgcolor: 'bgcolor.bg', height: '100%'}} >
-          <ListItem button onClick={toggleDrawer}>
+            <Link to={"/"} style={{color: 'black', textDecoration: 'none'}}>
+            <ListItem button onClick={toggleDrawer}>
             <HomeIcon/>
-            <Link to={"/"} style={{color: 'black', textDecoration: 'none'}}>Hem</Link>
-          </ListItem>
+              Hem
+              </ListItem>
+            </Link>
+            <Link to={"/platser"} style={{color: 'black', textDecoration: 'none'}}>
           <ListItem button onClick={toggleDrawer}>
             <PlaceIcon/>
-            <Link to={"/platser"} style={{color: 'black', textDecoration: 'none'}}>Platser</Link>
+            Se fler platser här
           </ListItem>
+          </Link>
+          <Link to={"/recensioner"} style={{color: 'black', textDecoration: 'none'}}>
           <ListItem button onClick={toggleDrawer}>
             <ShareIcon/>
-            <Link to={"/recensioner"} style={{color: 'black', textDecoration: 'none'}}>Ladda upp din favoritplats</Link>
+            Ladda upp din favoritplats
           </ListItem>
+          </Link>
         </List>
       </Drawer>
     </AppBar>

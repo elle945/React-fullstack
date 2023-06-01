@@ -41,7 +41,7 @@ const Webcam2 = () => {
   );
 };
 
-//{capturedImage && <img src={capturedImage} alt="Captured" />}
-//{imageName && <p>Image Name: {imageName}</p>}
+// {capturedImage && <img src={capturedImage} alt="Captured" />}
+// {imageName && <p>Image Name: {imageName}</p>}
 
 export default Webcam2;

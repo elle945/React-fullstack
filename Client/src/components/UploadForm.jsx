@@ -17,17 +17,13 @@ const UploadForm = () => {
 
   // const [value, setValue] = React.useState(2);
 const [confirmed, setConfirmed] = useState(false)
-const [info, setInfo] = useState({
 
- location : "",
- description: "",
- rating: Number,
- image_url: "",
- bbq: Boolean
-})
 
 const [error, setError]=useState(false);
 
+//Knapp för refresh
+//const refresh = () => window.location.reload(true)
+<Button onClick={refresh} variant="success">Uppdatera sidan innan nytt uppladdning</Button>
 
 
 {/*
