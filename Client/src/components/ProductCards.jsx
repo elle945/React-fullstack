@@ -13,7 +13,6 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
-import OutdoorGrillIcon from '@mui/icons-material/OutdoorGrill';
 import ModalComp1 from './ModalComp1';
 
  function ProductCards() {
@@ -121,10 +120,7 @@ const searchName = (event) => {
      </Card.Text>
      <Rating style={{padding: '1em'}} name="read-only" value={item.rating} readOnly />
 
-    <div>
-      {/* Ternary operator checks if statement (icon[index]) */}
-    {icon[index] ? <OutdoorGrillIcon/>  : true}
-     </div>
+   
      <ModalComp1 key={index} item={item}/>
     </Card.Body>
     </Card>

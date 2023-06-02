@@ -121,7 +121,7 @@ body {
 }
 
 .postButton {
-  background-color: #6c7061;
+  background-color: #4f5343;
   color:#ffffff;
   border-radius: 10px;
   border: none;
@@ -135,7 +135,7 @@ body {
 }
 
 .postButton2 {
-  background-color: #7e8469;
+  background-color: #6c7061;
   color:#ffffff;
   border-radius: 10px;
   border: none;
@@ -146,6 +146,13 @@ body {
   font-size: medium;
   cursor: pointer;
   margin: 2vh;
+}
+.postButton:not(:disabled):hover {
+  transform: scale(1.05);
+}
+
+.postButton-80:not(:disabled):hover:active {
+  transform: scale(1.05) translateY(.125rem);
 }
 
 .formCard {

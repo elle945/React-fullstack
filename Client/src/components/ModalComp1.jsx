@@ -7,6 +7,8 @@ import WcIcon from '@mui/icons-material/Wc';
 import LocalParkingIcon from '@mui/icons-material/LocalParking';
 import PoolIcon from '@mui/icons-material/Pool';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import OutdoorGrillIcon from '@mui/icons-material/OutdoorGrill';
+
 
 function ModalComp1(props) {
   const [props1, setProps1] = useState(props.item)
@@ -30,20 +32,25 @@ function ModalComp1(props) {
           </Modal.Header>
 
           <Modal.Body>
-  <div style={{ marginBottom: "10px" }}>
+  <div style={{ marginBottom: "10px",  }}>
     <LocalParkingIcon />
-    Parking: {props1.parking ? <ThumbUpIcon/> : false}
+    Parkering: {props1.parking ?  <ThumbUpIcon/> : false} 
   </div>
 
   <div style={{ marginBottom: "10px" }}>
     <PoolIcon />
-    Swim: {props1.swim ? <ThumbUpIcon /> : false}
+    Badplats: {props1.swim ? <ThumbUpIcon /> : false}
   </div>
 
   <div style={{ marginBottom: "10px" }}>
     <WcIcon />
-    Toilets: {props1.utility ? <ThumbUpIcon /> : false}
+    Toalett: {props1.utility ? <ThumbUpIcon /> : false}
   </div>
+  <div style={{ marginBottom: "10px" }}>
+    <OutdoorGrillIcon />
+    Grillplats: {props1.bbq ? <ThumbUpIcon /> : false}
+  </div>
+  
 </Modal.Body>
 
         <Modal.Footer>

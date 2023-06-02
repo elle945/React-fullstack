@@ -74,7 +74,7 @@ const handleSubmit = async (e) => {
         label="Namnge plats"
         className="mb-3"
       >
-        <Form.Control as="input" type="text" placeholder="Namnge plats" name="location"
+        <Form.Control as="input" type="text" placeholder="Namnge plats" name="location" value={info.location || ''} 
   onChange={handleChange} />
         </FloatingLabel>
       </Form.Group>
@@ -121,7 +121,8 @@ const handleSubmit = async (e) => {
         label="Ge din beskrivning"
         className="mb-3"
       >
-        <Form.Control as="textarea" type="text" rows={4}  placeholder="Ge din beskrivning" name="description"   onChange={handleChange} />
+        {/* Lägger till value={info.description || ''} för att restea inputfält i frontend */}
+        <Form.Control as="textarea" type="text" rows={4} value={info.description || ''}  placeholder="Ge din beskrivning" name="description"   onChange={handleChange} />
         </FloatingLabel>
       </Form.Group>
       <Form.Text className="text-muted">
