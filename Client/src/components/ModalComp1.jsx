@@ -20,9 +20,9 @@ function ModalComp1(props) {
   return (
     <>
 
-       <Button variant="success" onClick={handleShow}>
+       <button className="postButton" onClick={handleShow}>
         Läs mer
-      </Button>
+      </button>
 
       <Modal  show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -47,9 +47,9 @@ function ModalComp1(props) {
 </Modal.Body>
 
         <Modal.Footer>
-          <Button variant="success" onClick={handleClose}>
+          <button className="postButton2" onClick={handleClose}>
             Stäng
-          </Button>
+          </button>
 
 
         </Modal.Footer>

@@ -121,13 +121,28 @@ body {
 }
 
 .postButton {
-  background-color: #558e2a;
-  border-radius: 16px;
+  background-color: #6c7061;
+  color:#ffffff;
+  border-radius: 10px;
   border: none;
   padding-top: 1.5vh;
   padding-bottom: 1.5vh;
-  padding-left: 6vh;
-  padding-right: 6vh;
+  padding-left: 4vh;
+  padding-right: 4vh;
+  font-size: medium;
+  cursor: pointer;
+  margin: 2vh;
+}
+
+.postButton2 {
+  background-color: #7e8469;
+  color:#ffffff;
+  border-radius: 10px;
+  border: none;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  padding-left: 2vh;
+  padding-right: 2vh;
   font-size: medium;
   cursor: pointer;
   margin: 2vh;
@@ -157,17 +172,12 @@ body {
   padding: 30px;
   background-color: rgba(255, 255, 255, 0.785);
   box-sizing: border-box;
-  border-left: 10px solid #ade8af;
-  border-right: 10px solid #d84bab;
+  border-left: 10px solid #d1cd7f;
+  border-right: 10px solid #74693f;
   border-radius: 8px;
-  background-image: -webkit-linear-gradient(left, #ade8af 50%, #525252 50%),
-    -webkit-linear-gradient(left, #ade8af 50%, #525252 50%);
-  background-image: -moz-linear-gradient(left, #ade8af 50%, #525252 50%),
-    -moz-linear-gradient(left, #ade8af 50%, #525252 50%);
-  background-image: -o-linear-gradient(left, #ade8af 50%, #525252 50%),
-    -o-linear-gradient(left, #ade8af 50%, #525252 50%);
-  background-image: linear-gradient(to right, #ade8af 50%, #525252 50%),
-    linear-gradient(to right, #ade8af 50%, #525252 50%);
+  background-image: -webkit-linear-gradient(left, #d1cd7f 30%, #74693f 70%),
+    -webkit-linear-gradient(left, #d1cd7f 30%, #74693f 70%);
+
   background-position: 0 0, 0 100%;
   background-repeat: no-repeat;
   background-size: 100% 10px;

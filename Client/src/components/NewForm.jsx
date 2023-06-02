@@ -1,4 +1,3 @@
-import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import axios from "axios"
@@ -13,11 +12,14 @@ function NewForm() {
     // const [value, setValue] = React.useState(2);
   const [confirmed, setConfirmed] = useState(false)
   const initialInfoState = {
-    location: null,
-    description: null,
+    location: "",
+    description: "",
     rating: 1,
     image_url: null,
-    bbq: false
+    bbq: false,
+    parking: false,
+    swim: false,
+    utility: false
  };
 
    
@@ -34,14 +36,15 @@ function NewForm() {
 const handleSubmit = async (e) => {
   if(info.location === "" || info.description === "") {
     setError(true)
+    setConfirmed(false)
     return;
 }
   
    e.preventDefault();
     try{
       await axios.post("http://localhost:3000/locationinfos", info);
-      setConfirmed(true)
       setError(false)
+      setConfirmed(true)
       setInfo(initialInfoState); // reset form här
      } catch (err) {
       console.log(err)
@@ -121,13 +124,25 @@ const handleSubmit = async (e) => {
         <Form.Control as="textarea" type="text" rows={4}  placeholder="Ge din beskrivning" name="description"   onChange={handleChange} />
         </FloatingLabel>
       </Form.Group>
+      <Form.Text className="text-muted">
+          Finns tillgängligt?
+        </Form.Text>
       <Form.Group className="mb-3" controlId="bbq">
-        <Form.Check type="checkbox" label="Grillplats är tillgängligt" name="bbq" onChange={handleChange} />
+        <Form.Check type="checkbox" label="Grillplats" name="bbq" onChange={handleChange} />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="parking">
+        <Form.Check type="checkbox" label="Parkeringsplats" name="parking" onChange={handleChange} />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="swim">
+        <Form.Check type="checkbox" label="Badplats" name="swim" onChange={handleChange} />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="utility">
+        <Form.Check type="checkbox" label="Toaletter " name="utility" onChange={handleChange} />
       </Form.Group>
      
-      <Button variant="success" type="button" onClick={handleSubmit} className="postButton">
+      <button type="button" onClick={handleSubmit} className="postButton">
         Lägg till
-      </Button>
+      </button>
       
       <div>
       {confirmed &&  <div><p>Din post har laddats upp!</p></div>}
