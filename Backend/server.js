@@ -121,15 +121,13 @@ app.get('/locationinfos', async (req, res) => {
 })
 
 
-
-
 //POST , 
 
 app.post('/locationinfos', async (req, res) => {
- const { location, description, rating, image_url, bbq } = req.body
- const values = [location, description, rating, image_url, bbq]
+ const { location, description, rating, image_url, bbq, parking, swim, utility } = req.body
+ const values = [location, description, rating, image_url, bbq, parking, swim, utility]
  await client.query(
- 'INSERT INTO locationinfos (location, description, rating, image_url, bbq) VALUES($1,$2,$3,$4,$5)',
+ 'INSERT INTO locationinfos (location, description, rating, image_url, bbq, parking, swim, utility) VALUES($1,$2,$3,$4,$5,$6,$7,$8)',
  values
  )
  res.send('Post successfully added')
