@@ -7,14 +7,14 @@ function Footer() {
 
 
 
-      <AppBar position="static" style={{position: 'relative', bottom: 0, width: "100%"}} sx={{bgcolor: 'bgcolor.bg'}}>
+      <div style={{position: "static", backgroundColor: "#f0efab", bottom: "0", height: "11.5vh"}}>
 
         <Toolbar style={{ display: 'flex', justifyContent: 'center' }}>
           <Typography variant="body1" color="black" >
             &copy; Smultronstället 2023
           </Typography>
         </Toolbar>
-      </AppBar>
+      </div>
     );
   }
 

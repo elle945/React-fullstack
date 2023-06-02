@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import TuneIcon from '@mui/icons-material/Tune';
 import ModalComp from '../components/ModalComp'
+import Slide from '../components/Slide'
 function HomePage() {
 
   const [data, setData] = useState([])
@@ -66,35 +67,9 @@ function filter(event) {
         </section>
 
         :
-
-        <section className='cardSection'>
-          <div className='bgimg'>
-            <Container sx={{ height: "100vh" }}>
-
-              <div className='homeForm'>
-              <input className='inputField' type="text" placeholder='Sök efter plats' value={eventData} onChange={filter}/>
-              <button className='inputBtn'><TuneIcon></TuneIcon></button>
-              </div>
-
-              {filterData.map((item, index) => (
-                <Card key={index} sx={{ borderBottomRightRadius: '12px', borderTopLeftRadius: '12px', borderTopRightRadius: '0px', borderBottomLeftRadius: '0px', height: '100px', color: 'cards.bg', marginTop: "3vh", display:"flex"}} elevation={4}>
-
-                  <img className='cardImg' src={`Images/${item.image_url}`} alt={`Images/${item.image_url}`} />
-
-
-                      <Typography variant='p' align="center" sx={{fontSize: "14pt", fontWeight: "400", margin:"auto", height:"inherit", marginTop:"2rem"}}>{item.location}</Typography>
-
-
-                <ModalComp key={index} item={item}/>
-
-                </Card>
-              ))}
-
-
-            </Container>
-            </div>
-        </section>
-
+<div>
+<Slide/>
+</div>
       }
 
 

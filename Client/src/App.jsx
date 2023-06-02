@@ -19,7 +19,7 @@ function App() {
           <Route path="/recensioner" element={<ReviewPage />} />
           </Routes>
     <Footer/>
-  
+
       </div>
       </>
   )
