@@ -41,11 +41,13 @@ const handleSubmit = async (e) => {
     try{
       await axios.post("http://localhost:3000/locationinfos", info);
       setConfirmed(true)
+      setError(false)
       setInfo(initialInfoState); // reset form här
      } catch (err) {
       console.log(err)
-    
+    setConfirmed(false)
       setError(true)
+      
      }}
     
      //Refresh form
@@ -59,7 +61,7 @@ const handleSubmit = async (e) => {
     <div className='formBg' >
          <h4 className='formHeader'>Lägg till ditt smultronställe</h4>
          <div className='outerForm'>
-    <Form className='newForm' onSubmit={handleSubmit} >
+    <Form className='newForm' >
       <Form.Group className="mb-3" controlId="location">
       <Form.Text className="text-muted">
           Fältet är obligatoriskt*
@@ -123,7 +125,7 @@ const handleSubmit = async (e) => {
         <Form.Check type="checkbox" label="Grillplats är tillgängligt" name="bbq" onChange={handleChange} />
       </Form.Group>
      
-      <Button variant="success" type="submit" onClick={handleSubmit} className="postButton">
+      <Button variant="success" type="button" onClick={handleSubmit} className="postButton">
         Lägg till
       </Button>
       

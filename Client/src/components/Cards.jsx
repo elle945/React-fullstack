@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import TuneIcon from '@mui/icons-material/Tune';
 import ModalComp from '../components/ModalComp'
-function HomePage() {
+function Cards() {
 
   const [data, setData] = useState([])
   const [ filterData, setFilterData] = useState([])
@@ -100,4 +100,4 @@ function filter(event) {
   )
 }
 
-export default HomePage
+export default Cards
