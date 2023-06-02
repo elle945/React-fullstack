@@ -21,7 +21,7 @@ function App() {
           <Route path="/card" element={<CardPage />} />
           </Routes>
     <Footer/>
-  
+
       </div>
       </>
   )

@@ -16,8 +16,6 @@ import FormLabel from '@mui/material/FormLabel';
 import OutdoorGrillIcon from '@mui/icons-material/OutdoorGrill';
 import ModalComp1 from './ModalComp1';
 
-
-
  function ProductCards() {
 
  const [data, setData] = useState([])

@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import TuneIcon from '@mui/icons-material/Tune';
 import ModalComp from '../components/ModalComp'
+import Slide from '../components/Slide'
 function HomePage() {
 
   const [data, setData] = useState([])
@@ -66,6 +67,10 @@ function filter(event) {
         </section>
 
         :
+
+<div>
+<Slide/>
+</div>
 
       }
 

@@ -20,34 +20,27 @@ body {
 .footer {
   position: relative;
   bottom: 0;
-padding: 0;
+  padding: 0;
   width: 100%;
 }
 
 .FormContainer {
   margin: 2em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .cardSection {
-  background-color: #F0EFAB;
-
-
+  background-color: #f0efab;
 }
 
 .bgimg {
-
   background-image: url('../public/smultOpac.png');
   background-repeat: no-repeat;
   background-position-x: center;
   height: 100vh;
   background-size: contain;
-
-
-
 }
 
 .cardImg {
@@ -59,109 +52,93 @@ padding: 0;
 .bgWelcome {
   height: 88vh;
   width: 100%;
-  background-color: #F0EFAB;
+  background-color: #f0efab;
   display: flex;
-flex-direction: column;
-
-
+  flex-direction: column;
 }
 
 .welcomeImg {
-    background-image: url('../public/smultOpac.png');
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-size: contain;
-    max-height: 60vh;
-    min-height: 300px;
-
-
+  background-image: url('../public/smultOpac.png');
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-size: contain;
+  max-height: 60vh;
+  min-height: 300px;
 }
 
 .welcomeText {
   font-family: 'Bodoni Moda';
   font-weight: 500;
   margin: auto;
-
 }
 
 .logoImg {
   background-image: url(../public/logga.png);
   background-repeat: no-repeat;
-    background-size: contain;
-    height: 150px;
-
+  background-size: contain;
+  height: 150px;
 }
 
 .flexFix {
   margin: auto;
 
   width: 150px;
-
 }
 
-
 .CardContainer {
-margin-top: 8vh;
-
-
+  margin-top: 8vh;
 }
 .homeForm {
   margin: auto;
   max-width: 80%;
   min-width: 50%;
-border-radius: 12px 0px 12px 0px;
-background-color: #ECEBEB;
+  border-radius: 12px 0px 12px 0px;
+  background-color: #ecebeb;
 }
 
 .inputField {
-width: 90%;
-height: 42px;
-border-radius: 12px 0px 12px 0px;
-border: none;
-padding-left: 10px;
-
+  width: 90%;
+  height: 42px;
+  border-radius: 12px 0px 12px 0px;
+  border: none;
+  padding-left: 10px;
 }
 .inputField2 {
   width: 90%;
   height: 42px;
   border-radius: 12px 0px 12px 0px;
   border: none;
-
-  }
+}
 
 .inputBtn {
-height: 42px;
-width: 50px;
-border-radius: 12px 0px 12px 0px;
-border: none;
-background-color: #ECEBEB;
-margin-right: 20px;
-position: absolute;
-
-
+  height: 42px;
+  width: 50px;
+  border-radius: 12px 0px 12px 0px;
+  border: none;
+  background-color: #ecebeb;
+  margin-right: 20px;
+  position: absolute;
 }
 
 .postButton {
-  background-color: #558E2A;
+  background-color: #558e2a;
   border-radius: 16px;
   border: none;
-padding-top: 1.5vh;
-padding-bottom: 1.5vh;
-padding-left: 6vh;
-padding-right: 6vh;
-font-size: medium;
-cursor: pointer;
+  padding-top: 1.5vh;
+  padding-bottom: 1.5vh;
+  padding-left: 6vh;
+  padding-right: 6vh;
+  font-size: medium;
+  cursor: pointer;
   margin: 2vh;
-
 }
 
-.formCard  {
+.formCard {
   padding-bottom: 10vh;
   margin-bottom: 10vh;
   align-items: center;
-    height: auto;
+  height: auto;
 }
-
 
 .my-modal {
   display: none;
@@ -173,31 +150,81 @@ cursor: pointer;
 
 .outerForm {
   width: 80%;
-  max-width: 650px ;
+  max-width: 650px;
   margin: auto;
   margin-top: 3vh;
   margin-bottom: 10vh;
   padding: 30px;
- background-color:rgba(255, 255, 255, 0.785);
- box-sizing: border-box;
- border-left: 10px solid #ade8af;
- border-right: 10px solid #d84bab;
- border-radius: 8px;
- background-image: -webkit-linear-gradient(left, #ade8af 50%, #525252 50%), -webkit-linear-gradient(left, #ade8af 50%, #525252 50%);
- background-image: -moz-linear-gradient(left, #ade8af 50%, #525252 50%), -moz-linear-gradient(left,#ade8af 50%, #525252 50%);
- background-image: -o-linear-gradient(left, #ade8af 50%, #525252 50%), -o-linear-gradient(left, #ade8af 50%, #525252 50%);
- background-image: linear-gradient(to right, #ade8af 50%, #525252 50%), linear-gradient(to right,#ade8af 50%, #525252 50%);
- background-position: 0 0, 0 100% ;
- background-repeat: no-repeat;
- background-size: 100% 10px;
+  background-color: rgba(255, 255, 255, 0.785);
+  box-sizing: border-box;
+  border-left: 10px solid #ade8af;
+  border-right: 10px solid #d84bab;
+  border-radius: 8px;
+  background-image: -webkit-linear-gradient(left, #ade8af 50%, #525252 50%),
+    -webkit-linear-gradient(left, #ade8af 50%, #525252 50%);
+  background-image: -moz-linear-gradient(left, #ade8af 50%, #525252 50%),
+    -moz-linear-gradient(left, #ade8af 50%, #525252 50%);
+  background-image: -o-linear-gradient(left, #ade8af 50%, #525252 50%),
+    -o-linear-gradient(left, #ade8af 50%, #525252 50%);
+  background-image: linear-gradient(to right, #ade8af 50%, #525252 50%),
+    linear-gradient(to right, #ade8af 50%, #525252 50%);
+  background-position: 0 0, 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 10px;
 }
 
-.formBg{
-  background-color: #F0EFAB;
-
+.formBg {
+  background-color: #f0efab;
 }
 
-.formHeader{
+.formHeader {
   text-align: center;
-  padding-top: 12px ;
+  padding-top: 12px;
+}
+
+/* Carousel CSS */
+/*
+.my-carousel {
+  width: 100%;
+  height: 100vh;
+} */
+
+.AboutText {
+  color: white;
+  font-weight: 600;
+  height: 7vh;
+}
+.AboutInfo {
+  color: white;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* .CarouselContinerDesktop {
+  display: inline;
+}  */
+
+.CarouselContinerDesktop {
+  display: inline;
+}
+.CarouselContinerMobile {
+  display: none;
+}
+
+@media only screen and (max-width: 391px) {
+  .CarouselContinerMobile {
+    display: inline;
+    width: 100%;
+  }
+
+  .CarouselContinerDesktop {
+    display: none;
+  }
 }
