@@ -45,6 +45,12 @@ function Navbar() {
             Ladda upp din favoritplats
           </ListItem>
           </Link>
+          <Link to={"/card"} style={{color: 'black', textDecoration: 'none'}}>
+          <ListItem button onClick={toggleDrawer}>
+            <ShareIcon/>
+            Card
+          </ListItem>
+          </Link>
         </List>
       </Drawer>
     </AppBar>
