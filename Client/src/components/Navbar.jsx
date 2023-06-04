@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { AppBar, Toolbar, IconButton, Typography, Drawer, List, ListItem, ListItemText } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
-import HomePage from '../pages/Home';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import HomeIcon from '@mui/icons-material/Home';
 import PlaceIcon from '@mui/icons-material/Place';
 import ShareIcon from '@mui/icons-material/Share';
@@ -45,10 +45,10 @@ function Navbar() {
             Ladda upp din favoritplats
           </ListItem>
           </Link>
-          <Link to={"/card"} style={{color: 'black', textDecoration: 'none'}}>
+          <Link to={"/creators"} style={{color: 'black', textDecoration: 'none'}}>
           <ListItem button onClick={toggleDrawer}>
-            <ShareIcon/>
-            Card
+            <PeopleAltIcon/>
+            Skapare
           </ListItem>
           </Link>
         </List>
