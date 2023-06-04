@@ -3,8 +3,8 @@ import { Box, Card, Container, Paper, Typography } from '@mui/material'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import TuneIcon from '@mui/icons-material/Tune';
-import ModalComp from '../components/ModalComp'
-function Cards() {
+import ModalComp from './ModalComp'
+function Creators() {
 
   const [data, setData] = useState([])
   const [ filterData, setFilterData] = useState([])
@@ -13,7 +13,7 @@ function Cards() {
   const [eventData, setEventData] = useState(null)
 
   useEffect(() => {
-    axios.get('http://localhost:3000/')
+    axios.get('http://localhost:3000/creaters')
       .then(response => {
         setFilterData(response.data)
         setData(response.data)
@@ -66,6 +66,7 @@ function filter(event) {
         </section>
 
         :
+        
         <section className='cardSection'>
         <div className='bgimg'>
           <Container sx={{ height: "100vh" }}>
@@ -78,10 +79,10 @@ function filter(event) {
             {filterData.map((item, index) => (
               <Card key={index} sx={{ borderBottomRightRadius: '12px', borderTopLeftRadius: '12px', borderTopRightRadius: '0px', borderBottomLeftRadius: '0px', height: '100px', color: 'cards.bg', marginTop: "3vh", display:"flex"}} elevation={4}>
         
-                <img className='cardImg' src={`Images/${item.image_url}`} alt={`Images/${item.image_url}`} />
+                <img className='cardImg' src={`Images/${item.profile_url}`} alt={`Images/${item.profile_url}`} />
         
         
-                    <Typography variant='p' align="center" sx={{fontSize: "14pt", fontWeight: "400", margin:"auto", height:"inherit", marginTop:"2rem"}}>{item.location}</Typography>
+                    <Typography variant='p' align="center" sx={{fontSize: "14pt", fontWeight: "400", margin:"auto", height:"inherit", marginTop:"2rem"}}>{item.firstname} {item.lastname}</Typography>
         
         
               <ModalComp key={index} item={item}/>
@@ -100,4 +101,4 @@ function filter(event) {
   )
 }
 
-export default Cards
+export default Creators

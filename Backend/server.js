@@ -1,25 +1,11 @@
-
 //Importerar allt man behöver
-
 import { config } from 'dotenv'
-
 import pkg from 'pg'
-
-
-
-
 const { Client } = pkg
 
-
-
-
 import express from 'express'
-
 import cors from 'cors'
-
 import bodyParser from 'body-parser'
-
-
 
 
 const app = express()
@@ -27,8 +13,6 @@ const app = express()
 //Dotenv
 
 config()
-
-
 
 
 //Middleware glöm ej parantesen
@@ -43,8 +27,6 @@ app.use(
 )
 
 
-
-
 app.use((req, res, next) => {
  res.header('Access-Control-Allow-Origin', '*')
  res.header('Access-Control-Allow-Headers', 'Content-Type')
@@ -53,18 +35,12 @@ app.use((req, res, next) => {
 })
 
 
-
-
 app.use(cors())
 
 app.use(express.json())
 
 
-
-
 //Importerar Databasen
-
-
 
 
 const client = new Client({
@@ -77,38 +53,26 @@ const client = new Client({
 })
 
 
-
-
 client.connect(function (err) {
  if (err) throw err
  console.log('Database Connected')
 
 })
 
-
-app.get('/', async (req, res) => {
+//Creators post
+app.get('/creaters', async (req, res) => {
   try {
-    const result = await client.query('SELECT * FROM locationinfos');
-    res.json(result.rows)
+  const result = await client.query('SELECT * FROM creaters')
+  res.json(result.rows)
+  } catch (err) {
+  console.error(err)
+  res.status(500).send('Error retrieving creaters')
+  }
+ 
+ })
 
-  }
-  catch (err) {
-    console.error(err);
-    res.status(500).send('Error retrieving locationinfos');
-  }
-})
-app.get('/:id', async (req, res) => {
-  try {
-    const result = await client.query('SELECT * FROM locationinfos');
-    res.json(result.rows)
 
-  }
-  catch (err) {
-    console.error(err);
-    res.status(500).send('Error retrieving locationinfos');
-  }
-})
-
+//locationinfos post
 app.get('/locationinfos', async (req, res) => {
  try {
  const result = await client.query('SELECT * FROM locationinfos')
@@ -149,8 +113,6 @@ app.delete('/locationinfos/:id', async (req, res) => {
   res.status(500).send('Server error')
 }
 })
-
-
 
 
 app.listen(3000, () => {

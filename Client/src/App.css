@@ -133,6 +133,14 @@ body {
   cursor: pointer;
   margin: 2vh;
 }
+.postButton:not(:disabled):hover {
+  transform: scale(1.05);
+}
+
+.postButton-80:not(:disabled):hover:active {
+  transform: scale(1.05) translateY(.125rem);
+}
+
 
 .postButton2 {
   background-color: #6c7061;
@@ -147,13 +155,31 @@ body {
   cursor: pointer;
   margin: 2vh;
 }
-.postButton:not(:disabled):hover {
+
+
+.postButton3 {
+  background-color: #4c4d47;
+  color: rgb(255, 251, 251);;
+  border-radius: 10px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border: none;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  padding-left: 2vh;
+  padding-right: 2vh;
+  font-size: medium;
+  cursor: pointer;
+
+}
+.postButton3:not(:disabled):hover {
   transform: scale(1.05);
+  padding: 3.5vh;
+  color: white;
 }
 
-.postButton-80:not(:disabled):hover:active {
-  transform: scale(1.05) translateY(.125rem);
-}
+
+
 
 .formCard {
   padding-bottom: 10vh;
