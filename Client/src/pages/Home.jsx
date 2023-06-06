@@ -56,18 +56,14 @@ function filter(event) {
     <>
 
       { welcome ?
-        <section className="bgWelcome" onClick={ () => setWelcome(false)}>
+        <section className="bgWelcome" onClick={ () => setWelcome(false)} style={{height: '100vh'}}>
           <div className="welcomeImg"></div>
           <div className='flexFix'>
           <div className="logoImg"></div>
           </div>
           <h3 className="welcomeText">Ditt favoritställe i naturen</h3>
-
-
         </section>
-
         :
-
 <div>
 <Slide/>
 </div>

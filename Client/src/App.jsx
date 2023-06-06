@@ -21,7 +21,7 @@ function App() {
           <Route path="/recensioner" element={<ReviewPage />} />
           <Route path="/creators" element={<CreatePage />} />
           </Routes>
-    <Footer/>
+    {/* <Footer/> */}
 
       </div>
       </>

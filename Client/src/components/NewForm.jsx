@@ -22,11 +22,11 @@ function NewForm() {
     utility: false
  };
 
-   
+
  const [info, setInfo] = useState(initialInfoState);
 
   const [error, setError]=useState(false);
-  
+
 //Läser in varje input
   const handleChange = (e) => {
     setInfo((prev) => ({...prev, [e.target.name]: e.target.value}));
@@ -39,7 +39,7 @@ const handleSubmit = async (e) => {
     setConfirmed(false)
     return;
 }
-  
+
    e.preventDefault();
     try{
       await axios.post("http://localhost:3000/locationinfos", info);
@@ -50,18 +50,18 @@ const handleSubmit = async (e) => {
       console.log(err)
     setConfirmed(false)
       setError(true)
-      
+
      }}
-    
+
      //Refresh form
-    
+
 
 
      // Lägger man till detta i Form tagen så gör formen submit på enter = onSubmit={handleSubmit}
 
   return (
-   
-    <div className='formBg' >
+
+    <div className='formBg' style={{overflowX: 'hidden'}} >
          <h4 className='formHeader'>Lägg till ditt smultronställe</h4>
          <div className='outerForm'>
     <Form className='newForm' >
@@ -74,7 +74,7 @@ const handleSubmit = async (e) => {
         label="Namnge plats"
         className="mb-3"
       >
-        <Form.Control as="input" type="text" placeholder="Namnge plats" name="location" value={info.location || ''} 
+        <Form.Control as="input" type="text" placeholder="Namnge plats" name="location" value={info.location || ''}
   onChange={handleChange} />
         </FloatingLabel>
       </Form.Group>
@@ -140,11 +140,11 @@ const handleSubmit = async (e) => {
       <Form.Group className="mb-3" controlId="utility">
         <Form.Check type="checkbox" label="Toaletter " name="utility" onChange={handleChange} />
       </Form.Group>
-     
+
       <button type="button" onClick={handleSubmit} className="postButton">
         Lägg till
       </button>
-      
+
       <div>
       {confirmed &&  <div><p>Din post har laddats upp!</p></div>}
 {error &&   <p>"Allt fällt måste vara ifyllda. Vänligen korrigera och försök igen!"</p>}
@@ -156,4 +156,3 @@ const handleSubmit = async (e) => {
 }
 
 export default NewForm;
-

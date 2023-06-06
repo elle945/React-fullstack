@@ -53,7 +53,7 @@ function filter(event) {
 
   return (
     <>
-        <section className='cardSection'>
+        <section className='cardSection' style={{overflowX: 'hidden'}}>
         <div className='bgimg'>
           <Container sx={{ height: "100vh" }}>
 
@@ -61,12 +61,12 @@ function filter(event) {
             </div>
 
             {filterData.map((item, index) => (
-              <Card key={index} sx={{ borderBottomRightRadius: '12px', borderTopLeftRadius: '12px', borderTopRightRadius: '0px', borderBottomLeftRadius: '0px', height: '100px', color: 'cards.bg', marginTop: "3vh", display:"flex"}} elevation={4}>
+              <Card key={index} sx={{ borderBottomRightRadius: '12px', borderTopLeftRadius: '12px', borderTopRightRadius: '0px', borderBottomLeftRadius: '0px', height: '160px', color: 'cards.bg', marginTop: "7vh", display:"flex"}} elevation={4}>
 
                 <img className='cardImg' src={`Images/${item.profile_url}`} alt={`Images/${item.profile_url}`} />
 
 
-                    <Typography variant='p' align="center" sx={{fontSize: "14pt", fontWeight: "400", margin:"auto", height:"inherit", marginTop:"2rem"}}>{item.firstname} {item.lastname}</Typography>
+                    <Typography variant='p' align="center" sx={{fontSize: "2em", fontWeight: "400", margin:"auto"}}>{item.firstname} {item.lastname}</Typography>
 
 
               <ModalComp key={index} item={item}/>
