@@ -23,7 +23,7 @@ function App() {
           <Route path="/creators" element={<CreatePage />} />
           <Route path="*" element={<ErrorPage /> } />
           </Routes>
-    <Footer/>
+    {/* <Footer/> */}
 
       </div>
       </>

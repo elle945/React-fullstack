@@ -78,10 +78,10 @@ const searchName = (event) => {
 
 
  return ( <div>
-  <div style={{backgroundColor:'rgb(240, 239, 171)'}}>
+  <div style={{backgroundColor:'rgb(240, 239, 171)', overflowX: 'hidden'}}>
 
 
-<div style={{width: '50%', margin: 'auto', marginTop: '2em'}}>
+<div style={{width: '50%', margin: 'auto', marginTop: '2em'}} >
   <input className='inputField' placeholder='Sök på en plats..' onInput={searchName} type='text'></input>
   <div style={{ marginTop:'5vh' }}>
  <FormLabel  id="demo-radio-buttons-group-label">Sortera efter:</FormLabel>
@@ -120,7 +120,7 @@ const searchName = (event) => {
      </Card.Text>
      <Rating style={{padding: '1em'}} name="read-only" value={item.rating} readOnly />
 
-   
+
      <ModalComp1 key={index} item={item}/>
     </Card.Body>
     </Card>
