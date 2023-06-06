@@ -23,8 +23,7 @@ function ModalComp(props) {
           <Modal.Title>{props1.firstname} {props1.lastname}</Modal.Title>
           </Modal.Header>
 
-        <Modal.Body>28 åring tjej som studerar 1 året av Frontend-utveckling vid ITHS, Stockholm. Sin fritid spenderar hon gärna med sin häst.
-          Klicka på länken för att se fler projekt: <a href={props1.git_url} target="_blank" rel="noopener noreferrer">{props1.git_url}</a> </Modal.Body>
+        <Modal.Body>{props1.about} <br></br><br></br><a href={props1.git_url} target="_blank" rel="noopener noreferrer">{props1.git_url}</a> </Modal.Body>
 
         <Modal.Footer>
           <button className='postButton' onClick={handleClose}>
