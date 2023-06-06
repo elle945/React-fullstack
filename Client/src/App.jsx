@@ -4,6 +4,7 @@ import PlacesPage from './pages/Places'
 import ReviewPage from './pages/Review'
 import NavBar from './components/Navbar'
 import Footer from './components/Footer'
+import ErrorPage from './pages/ErrorPage'
 
 import { Routes, Route, Link } from 'react-router-dom'
 import CreatePage from './pages/Create'
@@ -20,6 +21,7 @@ function App() {
           <Route path="/platser" element={<PlacesPage />} />
           <Route path="/recensioner" element={<ReviewPage />} />
           <Route path="/creators" element={<CreatePage />} />
+          <Route path="*" element={<ErrorPage /> } />
           </Routes>
     <Footer/>
 
