@@ -8,10 +8,10 @@ import {useState,useEffect} from "react"
 import Rating from '@mui/material/Rating';
 import { Container, Row, Col, Card } from 'react-bootstrap'
 import '../App.css';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
+import { Checkbox } from '@mui/material';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
+import FormGroup from '@mui/material/FormGroup';
 import FormLabel from '@mui/material/FormLabel';
 import ModalComp1 from './ModalComp1';
 
@@ -19,6 +19,11 @@ import ModalComp1 from './ModalComp1';
 
  const [data, setData] = useState([])
  const [icon, setIcon] = useState([])
+ const [sortOptions, setSortOptions] = useState({
+  highRating: false,
+  lowRating: false,
+});
+
 
   useEffect(() => {
   axios.get('http://localhost:3000/locationinfos')
@@ -75,6 +80,17 @@ const searchName = (event) => {
     setData(matchingName);
   }
 }
+const handleSortChange = (event) => {
+  setSortOptions({ ...sortOptions, [event.target.name]: event.target.checked });
+
+  if (event.target.name === "highRating" && event.target.checked) {
+    highRating();
+  } else if (event.target.name === "lowRating" && event.target.checked) {
+    lowRating();
+  } else {
+    fetchData(); // Resets data to original order when none of the checkboxes are checked
+  }
+};
 
 
  return ( <div>
@@ -84,24 +100,31 @@ const searchName = (event) => {
 <div style={{width: '50%', margin: 'auto', marginTop: '2em'}} >
   <input className='inputField' placeholder='Sök på en plats..' onInput={searchName} type='text'></input>
   <div style={{ marginTop:'5vh' }}>
- <FormLabel  id="demo-radio-buttons-group-label">Sortera efter:</FormLabel>
-  <RadioGroup
-  row
-    aria-labelledby="demo-radio-buttons-group-label"
-    name="radio-buttons-group"
-    // sx={{
-    //   backgroundColor: pink[800],
-    //   '&.Mui-checked': {
-    //     color: pink[600],
-
-    //   },
-    // }}
-
-  >
-    <FormControlLabel onClick={highRating} value="highRating" control={<Radio/>} label="Högsta rating" />
-    <FormControlLabel onClick={lowRating} value="lowRating" control={<Radio />} label="Lägsta rating" />
-
-  </RadioGroup>
+  <FormLabel id="demo-checkboxes-group-label">Sortera efter: </FormLabel><br></br>
+<FormControl row component="fieldset">
+  <FormGroup style={{display: 'flex', flexDirection: 'row'}}>
+    <FormControlLabel
+      control={
+        <Checkbox
+          checked={sortOptions.highRating}
+          onChange={handleSortChange}
+          name="highRating"
+        />
+      }
+      label="Högsta rating"
+    />
+    <FormControlLabel
+      control={
+        <Checkbox
+          checked={sortOptions.lowRating}
+          onChange={handleSortChange}
+          name="lowRating"
+        />
+      }
+      label="Lägsta rating"
+    />
+  </FormGroup>
+</FormControl>
   </div>
   </div>
 
