@@ -62,7 +62,7 @@ function Slide() {
             <Carousel.Caption>
               <h3 className='AboutText'>Om Oss</h3>
               <p className='AboutInfo'>
-                Smultronstället grundades år 2010 av Anna och Sven Nygren med en stark gemensam vision. De ville skapa en plattform där människor kunde samlas och dela sina resor genom att lägga upp bilder om de platser de hade besökt. Deras ambition var att skapa en community av resenärer och naturälskare som kunde inspirera och dela sina erfarenheter med varandra.
+                Smultronstället grundades år 2010 av Helena Nilsson och Sven Nygren med en stark gemensam vision. De ville skapa en plattform där människor kunde samlas och dela sina resor genom att lägga upp bilder om de platser de hade besökt. Deras ambition var att skapa en community av resenärer och naturälskare som kunde inspirera och dela sina erfarenheter med varandra.
               </p>
             </Carousel.Caption>
           </Carousel.Item>
